@@ -30,7 +30,7 @@ giữ nguyên chữ ký `run_claim(claim_id, *, seed, store_path, crash_at=None)
    trước đã nhận trên cùng đơn (T13, T14) — host là người trừ, tự trừ sẽ bị trừ hai lần.
 3. **Không tự từ chối khi approval hỏng:** để host từ chối để có audit `policy_denied`
    (T07, T13); shape tự chối thì không có audit nên fail.
-4. **TODO CP3:** truyền `crash_at` vào `issue_refund` và **không** bắt `InjectedCrash`
+4. **CP3:** truyền `crash_at` vào `issue_refund` và **không** bắt `InjectedCrash`
    để crash thật sự xảy ra (T12); trace được ghi trước khi ném lại exception.
 5. **Một điểm thoát duy nhất `_finish()`:** mọi nhánh return (kể cả `needs_info`,
    `escalated`, `failed`) đều qua `lab8.shapes.common.finish()` để `refund_effects`,

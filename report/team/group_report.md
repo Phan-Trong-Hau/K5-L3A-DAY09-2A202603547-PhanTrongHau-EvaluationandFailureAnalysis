@@ -37,7 +37,7 @@ Ba shape A/B/C đã qua ma trận student gồm các ca policy, trace, retry và
 
 Cả ba shape nhóm viết đều đạt pass rate 1.000; workflow rẻ nhất (28.78) trong khi là kiến trúc ít tự chủ nhất — quyết định kiến trúc của nhóm: chọn **workflow** (chi tiết lập luận trong `decision_adr.md`). Swarm là shape duy nhất có variance khác 0 vì điểm yếu cố ý ở seed 55.
 
-Cổng `python -m pytest -q`: **124 passed** (gồm cổng host + test nhóm thêm). Ma trận student: **248 passed** (62 test × 4 shape). Crash suite: **20/20** (`src/reports/crash.json`).
+Cổng `python -m pytest -q`: **129 passed** (gồm cổng host + test nhóm thêm). Ma trận student: **248 passed** (62 test × 4 shape). Crash suite: **20/20** (`src/reports/crash.json`).
 
 ### Bonus B3 (nguồn `src/reports/bonus_*.json`, 5 seed 11, 22, 33, 44, 55)
 

@@ -46,5 +46,5 @@
 
 ## 6. Tự đánh giá
 
-- Hoàn thành 100% nhiệm vụ phụ trách đúng hạn (CP2–CP4 cho Shape B `single`, đạt 62/62 test student và giữ xanh 54/54 test cổng host).
+- Hoàn thành 100% nhiệm vụ phụ trách đúng hạn (CP2–CP4 cho Shape B `single`, đạt 62/62 test student và giữ xanh toàn bộ test cổng host).
 - Hiểu rõ sự khác biệt giữa Shape A (`workflow`), Shape B (`single` ReAct), Shape C (`orchestrator`) và Shape D (`swarm`), cũng như lý do mọi quyết định về tiền, approval, per-order cap và idempotency phải đặt ở tầng code/host thay vì phó mặc cho LLM.
