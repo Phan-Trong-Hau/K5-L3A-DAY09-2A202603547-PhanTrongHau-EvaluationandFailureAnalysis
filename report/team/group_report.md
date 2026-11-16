@@ -12,7 +12,7 @@
 
 Nhóm triển khai cùng một quy trình xử lý claim qua workflow (A), single ReAct agent (B), orchestrator (C) và swarm reference (D). Dùng cùng host để kiểm policy, approval, trần hoàn tiền theo order và idempotency. Shape D có sẵn để làm baseline; nhóm chia A, B, C cho ba thành viên và Phan Trọng Hậu phụ trách baseline D cùng bonus B3.
 
-Shape B (`single`) và Shape C (`orchestrator`) đã qua 62/62 test student mỗi shape. Shape A (`workflow`) vẫn là stub, nên benchmark đã chạy nhưng hàng workflow chưa có ý nghĩa đánh giá; cần triển khai A rồi chạy lại trước khi chọn kiến trúc cuối.
+Shape B (`single`, Ngô Đức Thịnh) và Shape C (`orchestrator`, Lê Hồng Quân) đã qua 62/62 test student mỗi shape. Shape A (`workflow`, Đào Huy Hoàng) vẫn là stub, nên benchmark đã chạy nhưng hàng workflow chưa có ý nghĩa đánh giá; cần triển khai A rồi chạy lại trước khi chọn kiến trúc cuối.
 
 ## 3. Giải pháp
 
@@ -22,7 +22,7 @@ Shape B (`single`) và Shape C (`orchestrator`) đã qua 62/62 test student mỗ
 - **D — swarm:** shape tham chiếu có sẵn; dùng làm baseline so sánh.
 - **Bonus B3:** `swarm_verified` giữ baseline swarm, thêm verifier trước refund. Nếu delay trong candidate khác order có cấu trúc, quote được tính lại trên dữ liệu order. Code nằm trong `src/bonus/`, không đổi A–C.
 
-Trace của A chưa được rà soát vì shape còn là stub. Shape B và C đã qua ma trận student gồm các ca policy, retry và crash; B3 có test riêng kiểm tra secret và resume sau crash chỉ có một refund.
+Trace của A chưa được rà soát vì shape còn là stub. Shape B và C đã qua ma trận student gồm các ca policy, retry và crash; B3 có test riêng kiểm tra secret và resume sau crash chỉ có một refund. Commit triển khai B/C chưa thêm test mới; nhóm cần bổ sung test riêng để đáp ứng checklist đóng góp cá nhân.
 
 ## 4. Kết quả
 
@@ -37,7 +37,7 @@ Benchmark cùng 14 claim × 5 seed; nguồn `src/reports/benchmark.json`. Workfl
 | orchestrator | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 36.82 | 3.43 / 4 |
 | swarm | 0.986 | 0.929 | 0.929–1.000 | 0.000816 | 49.57 | 2.80 / 3 |
 
-Shape B và C mỗi shape qua **62/62 test student**. Cổng `python -m pytest -q`: **76 passed, 248 deselected**. Crash suite: **20/20** (`src/reports/crash.json`).
+Shape B và C mỗi shape qua **62/62 test student**. Cổng `python -m pytest -q`: **76 passed, 248 deselected**. Crash suite: **20/20** (`src/reports/crash.json`). Smoke: `python -m lab8.smoke` pass trên môi trường hiện tại.
 
 ### Bonus B3 (kết quả hiện tại, chưa phải benchmark nhóm)
 
@@ -66,7 +66,7 @@ Benchmark bốn shape đã có nhưng cần chạy lại sau khi triển khai A.
 
 ## 6. Tổng hợp đóng góp
 
-Shape B và C đã qua test student. Phan Trọng Hậu làm baseline D, biến thể B3, tám case đối kháng, test và benchmark bonus. Thành viên phụ trách A và commit/test tương ứng cần cập nhật trong `TEAM.md` và báo cáo cá nhân.
+Shape B và C đã qua test student. Ngô Đức Thịnh phụ trách B, Lê Hồng Quân phụ trách C, Đào Huy Hoàng phụ trách A. Phan Trọng Hậu làm baseline D, biến thể B3, tám case đối kháng, test và benchmark bonus. B/C cần bổ sung test do thành viên phụ trách thêm hoặc sửa; A còn thiếu implementation, commit và test.
 
 ## 7. Hạn chế và hướng cải thiện
 
