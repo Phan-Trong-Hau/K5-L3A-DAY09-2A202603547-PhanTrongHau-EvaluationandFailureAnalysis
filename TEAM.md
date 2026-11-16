@@ -14,7 +14,7 @@
 |   1 | Đào Huy Hoàng       | 2A202603451     |       |        |         |
 |   2 | Lê Hồng Quân       | 2A202603705     |       |        |         |
 |   3 | Phan Trọng Hậu       | 2A202603547     |       | [Phan-Trong-Hau](https://github.com/Phan-Trong-Hau) | D baseline + bonus B3, đánh giá |
-|   4 | Ngô Đức Thịnh       | 2A202603548     |       |        |         |
+|   4 | Ngô Đức Thịnh       | 2A202603548     |       |[`NgooThinh05`](https://github.com/NgooThinh05)        | Shape B        |
 Gợi ý chia vai:
 
 - Nhóm 6 người: integration; workflow; single agent; orchestrator; ledger/policy/crash; eval/report.
