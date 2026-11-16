@@ -22,7 +22,7 @@ Shape A (`workflow`, Đào Huy Hoàng), B (`single`, Ngô Đức Thịnh) và C 
 - **D — swarm:** shape tham chiếu có sẵn; dùng làm baseline so sánh.
 - **Bonus B3:** `swarm_verified` giữ baseline swarm, thêm verifier trước refund. Nếu delay trong candidate khác order có cấu trúc, quote được tính lại trên dữ liệu order. Code nằm trong `src/bonus/`, không đổi A–C.
 
-Ba shape A/B/C đã qua ma trận student gồm các ca policy, trace, retry và crash. B3 có test riêng kiểm tra secret và resume sau crash chỉ có một refund. Các commit B/C không thêm test mới; cần bổ sung test do thành viên phụ trách viết để đáp ứng checklist đóng góp cá nhân.
+Ba shape A/B/C đã qua ma trận student gồm các ca policy, trace, retry và crash. A và C có test riêng được thêm vào repo; B chưa thêm test trong commit Shape B. B3 có test riêng kiểm tra secret và resume sau crash chỉ có một refund.
 
 ## 4. Kết quả
 
@@ -37,7 +37,7 @@ Benchmark cùng 14 claim × 5 seed; nguồn `src/reports/benchmark.json`. Chi ph
 | orchestrator | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 36.82 | 3.43 / 4 |
 | swarm | 0.986 | 0.929 | 0.929–1.000 | 0.000816 | 49.57 | 2.80 / 3 |
 
-Mỗi shape A/B/C qua **62/62 test student**; toàn ma trận **248 passed**. Cổng `python -m pytest -q`: **78 passed, 248 deselected**. Crash suite: **20/20** (`src/reports/crash.json`). Smoke pass.
+Mỗi shape A/B/C qua **62/62 test student**; toàn ma trận **248 passed**. Cổng `python -m pytest -q`: **118 passed, 248 deselected**. Crash suite: **20/20** (`src/reports/crash.json`). Smoke pass.
 
 ### Bonus B3
 
@@ -68,7 +68,7 @@ Repo hiện cũng có code/report cho B1 (parallel orchestrator) do thành viên
 
 ## 6. Tổng hợp đóng góp
 
-Shape A do Đào Huy Hoàng, B do Ngô Đức Thịnh, C do Lê Hồng Quân phụ trách; D baseline và B3 do Phan Trọng Hậu phụ trách. B/C cần bổ sung test do thành viên phụ trách thêm hoặc sửa theo checklist đóng góp cá nhân.
+Shape A do Đào Huy Hoàng, B do Ngô Đức Thịnh, C và B1 do Lê Hồng Quân phụ trách; D baseline và B3 do Phan Trọng Hậu phụ trách. B cần bổ sung test do thành viên phụ trách thêm hoặc sửa theo checklist đóng góp cá nhân.
 
 ## 7. Hạn chế và hướng cải thiện
 

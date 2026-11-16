@@ -6,7 +6,7 @@ Năm checkpoint bám theo lịch buổi lab 13:30–17:30 (nghỉ 15:15–15:30)
 
 | Checkpoint | Trạng thái hiện tại | Bằng chứng / phần còn lại |
 | --- | --- | --- |
-| CP1 — cài đặt, contract, chia vai | Smoke pass; đủ tên và vai trò 4 thành viên trong `TEAM.md` | B/C chưa thêm test vào commit của mình; bổ sung để đáp ứng yêu cầu đóng góp cá nhân |
+| CP1 — cài đặt, contract, chia vai | Smoke pass; đủ tên và vai trò 4 thành viên trong `TEAM.md` | B chưa thêm test trong commit Shape B; bổ sung test để đáp ứng yêu cầu đóng góp cá nhân |
 | CP2 — ba shape | **Hoàn tất.** Workflow, single và orchestrator mỗi shape qua 62/62 test student; toàn ma trận student 248/248 pass | Lệnh tổng: `python -m pytest -q -m student -o addopts=` |
 | CP3 — handoff, ledger, crash | **Hoàn tất trên bộ public.** Ma trận student xanh gồm retry, resume sau crash; test host và handoff xanh | Hidden handoff/security chưa được kiểm tra vì chưa có `student_drop/` |
 | CP4 — crash, approval, secret | Crash suite **20/20**; public student tests xanh | Must-pass trên hidden/chosen shape chưa xác nhận; cần hidden pack và chốt shape |
