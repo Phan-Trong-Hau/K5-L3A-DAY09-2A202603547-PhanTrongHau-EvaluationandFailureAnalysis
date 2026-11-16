@@ -2,10 +2,10 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
+- Tên nhóm: HHTQ
 - Lớp: L3A
-- Repo nhóm: `K5-L3A-DAY08-TenNhom-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Repo nhóm: `K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
+- URL repo, nhánh nộp, commit chốt: https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents, nhánh `main`, commit chốt `0424133` (trùng `report/team/decision_adr.md`)
 
 ## Thành viên
 
@@ -15,6 +15,7 @@
 |   2 | Lê Hồng Quân       | 2A202603705     | 26ai.quanlh3@vinuni.edu.vn | [LeHongQuanMarble](https://github.com/LeHongQuanMarble) | Shape C — orchestrator + handoff; bonus B1 |
 |   3 | Phan Trọng Hậu       | 2A202603547     |       | [Phan-Trong-Hau](https://github.com/Phan-Trong-Hau) | D baseline + bonus B3, đánh giá |
 |   4 | Ngô Đức Thịnh       | 2A202603548     |       | [`NgooThinh05`](https://github.com/NgooThinh05) | Shape B — single |
+
 Gợi ý chia vai:
 
 - Nhóm 6 người: integration; workflow; single agent; orchestrator; ledger/policy/crash; eval/report.
@@ -91,3 +92,41 @@ Sao chép mục dưới đây cho từng thành viên.
 - Commit `fbe22ed` (shape), `01e9ecf` (test và B1), `0ff146b` (dòng trong bảng này), `7b6c181` (ADR, research card, báo cáo cá nhân).
 - Test tự thêm: `src/tests/test_orchestrator_shape.py` (7 test), `src/tests/test_bonus_orchestrator_parallel.py`.
 - Báo cáo cá nhân: `report/team/2A202603705_LeHongQuan.md`; báo cáo bonus: `report/team/bonus_report_b1.md`.
+
+## 2A202603547_PhanTrongHau
+
+### Phần việc phụ trách
+
+- Shape D (`swarm`) làm baseline đối chứng và bonus B3: biến thể swarm có verifier dựa trên dữ liệu order có cấu trúc.
+- Bộ case đối kháng, kiểm thử, benchmark và báo cáo bonus.
+
+### Đóng góp cụ thể
+
+- `src/bonus/swarm_verified.py`: kiểm chứng dữ kiện quote trước khi gọi host ghi refund; tính lại quote từ order khi dữ kiện không khớp.
+- `src/bonus/workflow_baseline.py`: baseline deterministic độc lập để so sánh B3, không thay file Shape A.
+- Tám claim đối kháng có nhãn viết tay (`src/bonus/cases.jsonl`, `src/bonus/world.json`), `src/bonus/summarize_b3.py`, `src/reports/bonus_analysis.json`.
+
+### Bằng chứng
+
+- Commit `87b2508`: `Add verified swarm B3 bonus`.
+- Test: `src/tests/test_bonus_swarm_verified.py` — 22 passed.
+- Benchmark: `src/reports/bonus_benchmark_public.json`, `src/reports/bonus_benchmark_adversarial.json`.
+- Báo cáo cá nhân: `report/team/2A202603547_PhanTrongHau.md`.
+
+## 2A202603548_NgoDucThinh
+
+### Phần việc phụ trách
+
+- Shape B — `single` (`src/lab8/shapes/single.py`): một vòng ReAct tối đa 8 bước, chỉ dùng tool đọc; host là nơi duy nhất ghi refund.
+
+### Đóng góp cụ thể
+
+- Quote lấy từ `lookup_order` và `compute_compensation`, không dùng số ngày trễ hay điều khoản trong ticket; truyền quote đầy đủ vào `issue_refund`; truyền `crash_at` và không nuốt `InjectedCrash`.
+- Kết quả: `pytest -q -m student -o addopts= -k "single]"` → 62 passed; `pytest -q` → 54 passed.
+
+### Bằng chứng
+
+- Commit `a517bc7` (`Shape B single`).
+- Run id: `R-single-C-001-s11`, `R-single-C-002-s55`.
+- Báo cáo cá nhân: `report/team/2A202603548_NgoDucThinh.md`.
+- Còn thiếu: test tự thêm hoặc sửa trong commit (theo tiêu chí C8), và email.
