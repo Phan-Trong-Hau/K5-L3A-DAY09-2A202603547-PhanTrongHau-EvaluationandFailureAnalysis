@@ -11,7 +11,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Đào Huy Hoàng       | 2A202603451     |       |        |         |
+|   1 | Đào Huy Hoàng       | 2A202603451     | 26ai.hoangdh@vinuni.edu.vn      |  https://github.com/hoang2k3ai      | Phụ trách Shape A        |
 |   2 | Lê Hồng Quân       | 2A202603705     |       |        |         |
 |   3 | Phan Trọng Hậu       | 2A202603547     |       | [Phan-Trong-Hau](https://github.com/Phan-Trong-Hau) | D baseline + bonus B3, đánh giá |
 |   4 | Ngô Đức Thịnh       | 2A202603548     |       |        |         |
@@ -26,6 +26,7 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
+| Đào Huy Hoàng | Shape A — workflow (`src/lab8/shapes/workflow.py`) | `26c4fde` | `src/tests/test_workflow_extra.py`: `test_workflow_quotes_from_order_row_not_ticket`, `test_workflow_trace_has_no_ticket_or_secret` |
 | Phan Trọng Hậu | D baseline + bonus B3, đánh giá | `87b2508` | `src/tests/test_bonus_swarm_verified.py` (22 passed) |
 
 ## Cá nhân
@@ -53,3 +54,20 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 -
+
+## 2A202603451_DaoHuyHoang
+
+### Phần việc phụ trách
+
+- Shape A — `workflow` (`src/lab8/shapes/workflow.py`): chuỗi quyết định cố định, host ghi refund.
+
+### Đóng góp cụ thể
+
+- Cài đặt 8 bước quyết định theo docstring, truyền quote đầy đủ vào `durability.issue_refund`, truyền `crash_at` và không bắt `InjectedCrash`, một điểm thoát `_finish()` cho mọi nhánh, trace không ghi ticket/secret/PII.
+- Kết quả: `pytest -q -m student -o addopts= -k workflow` → 62 passed; `pytest -q` → 56 passed.
+
+### Bằng chứng
+
+- Commit `26c4fde` (nhánh `main`): `feat(workflow): implement shape A decision ladder`.
+- Test tự thêm: `src/tests/test_workflow_extra.py` (2 test).
+- Báo cáo cá nhân: `report/team/2A202603451_DaoHuyHoang.md`.

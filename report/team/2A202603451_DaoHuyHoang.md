@@ -4,8 +4,8 @@
 
 - Họ tên: Dao Huy Hoang
 - MSSV: 2A202603451
-- Email: [...]
-- GitHub: [...]
+- Email: 26ai.hoangdh@vinuni.edu.vn
+- GitHub: https://github.com/hoang2k3ai
 
 ## 2. Phần việc phụ trách
 
@@ -17,8 +17,7 @@ giữ nguyên chữ ký `run_claim(claim_id, *, seed, store_path, crash_at=None)
 
 ### Commit chính
 
-- `[hash]` — `feat(workflow): implement shape A decision ladder, pass T01-T14`
-  *(điền hash sau khi commit; xem lệnh commit gợi ý ở cuối file)*
+- `26c4fde` — `feat(workflow): implement shape A decision ladder`
 
 ### Quyết định kỹ thuật tôi đưa ra
 
@@ -45,17 +44,25 @@ giữ nguyên chữ ký `run_claim(claim_id, *, seed, store_path, crash_at=None)
 
 ### Test đã thêm hoặc sửa
 
-- `[điền sau khi thêm test riêng — yêu cầu: mỗi thành viên ít nhất 1 test]`
+- File mới: `src/tests/test_workflow_extra.py` (commit theo), 2 test:
+  - `test_workflow_quotes_from_order_row_not_ticket` — C-002 ticket khai trễ 5 ngày
+    nhưng order row ghi 2 ngày → shape phải quote theo **order row** (denied, 0 VND),
+    không giống điểm yếu có chủ ý của swarm trả 20000 VND.
+  - `test_workflow_trace_has_no_ticket_or_secret` — trace phải đúng contract v1
+    (run_id khớp, có `events`) và **không** chứa `CANARY_SECRET_PARENT_*`, header
+    `Bearer`, hay chữ trong ticket.
 
 ### Kết quả kiểm chứng
 
 - `python -m pytest -q -m student -o addopts= -k workflow` → **62 passed** (T01–T14 × 5 seed: 11, 22, 33, 44, 55)
-- `python -m pytest -q` (cổng host) → **54 passed**, không phá phần chung
+- `python -m pytest -q tests/test_workflow_extra.py` → **2 passed** (2 test tự thêm)
+- `python -m pytest -q` (cổng host) → **56 passed** (54 phần chung + 2 test tự thêm)
 
 ## 4. Bằng chứng
 
-- File: `src/lab8/shapes/workflow.py`
-- Link commit: `[điền sau khi push]`
+- File: `src/lab8/shapes/workflow.py` (shape A) và `src/tests/test_workflow_extra.py` (test riêng)
+- Link commit: https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents/commit/26c4fde
+  *(commit `26c4fde` trên nhánh `main`; link hoạt động đầy đủ sau khi `git push`)*
 - Lệnh chạy và output ghi ở mục 3 trên.
 - Run id của shape: `R-workflow-<claim_id>-s<seed>` (ví dụ `R-workflow-C-001-s11`).
 
