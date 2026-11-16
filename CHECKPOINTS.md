@@ -10,7 +10,7 @@ Năm checkpoint bám theo lịch buổi lab 13:30–17:30 (nghỉ 15:15–15:30)
 | CP2 — ba shape | **Hoàn tất.** Workflow, single và orchestrator mỗi shape qua 62/62 test student; toàn ma trận student 248/248 pass | Lệnh tổng: `python -m pytest -q -m student -o addopts=` |
 | CP3 — handoff, ledger, crash | **Hoàn tất trên bộ public.** Ma trận student xanh gồm retry, resume sau crash; test host và handoff xanh | Hidden handoff/security chưa được kiểm tra vì chưa có `student_drop/` |
 | CP4 — crash, approval, secret | Crash suite **20/20**; public student tests xanh | Must-pass trên hidden/chosen shape chưa xác nhận; cần hidden pack và chốt shape |
-| CP5 — benchmark, hidden, báo cáo | Benchmark public 4 shape × 14 claim × 5 seed hoàn tất; báo cáo nhóm và bonus đã có | `student_drop/` không có; ADR/research card còn trống, `check_submission` báo 8 FAIL. Repo có cả artifact B1 và B3; đề chỉ cho chọn một topic bonus |
+| CP5 — benchmark, hidden, báo cáo | Benchmark public hoàn tất; ADR chọn `workflow`; topic bonus được chọn là B3 | Chưa có `student_drop/` hoặc hidden grade; research card còn trống. Repo còn artifact B1 nhưng không chọn B1 để chấm |
 
 Shape D `swarm` có sẵn làm baseline. Bonus B3 (`swarm_verified`) đã có test và benchmark riêng; việc này không thay thế các checkpoint bắt buộc của A–C.
 

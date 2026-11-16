@@ -1,6 +1,6 @@
 # Báo cáo nhóm — Lab 8 LogiX-VN
 
-**Bản tiến độ ngày 2026-11-16.** Ba shape bắt buộc đã hoàn thành và benchmark public đã chạy. Báo cáo còn thiếu quyết định kiến trúc cuối và kết quả hidden.
+**Bản tiến độ ngày 2026-11-16.** Ba shape bắt buộc và benchmark public đã hoàn tất. Nhóm chọn `workflow` cho C2 và B3 làm topic bonus; kết quả hidden vẫn đang chờ grader.
 
 ## 1. Thông tin nhóm
 
@@ -47,18 +47,18 @@ Số dưới đây lấy từ JSON benchmark do công cụ sinh ra, với 5 seed
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Public, 14 claim | swarm | 0.986 | 0.929 | 0.929–1.000 | 0.000816 | 49.57 | 2.80 / 3 |
 | Public, 14 claim | swarm_verified | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 48.86 | 3.66 / 4 |
-| Public, 14 claim | workflow baseline | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 27.86 | 1.86 / 2 |
+| Public, 14 claim | workflow | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 28.78 | 3.79 / 4 |
 | Tự viết, 8 claim | swarm | 0.850 | 0.250 | 0.250–1.000 | 0.090000 | 63.39 | 3.18 / 4 |
 | Tự viết, 8 claim | swarm_verified | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 53.88 | 4.18 / 5 |
-| Tự viết, 8 claim | workflow baseline | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 30.00 | 2.00 / 2 |
+| Tự viết, 8 claim | workflow | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 30.93 | 4.00 / 4 |
 
-Nguồn: `src/reports/bonus_benchmark_public.json`, `src/reports/bonus_benchmark_adversarial.json` và `src/reports/bonus_analysis.json`. Test bonus: 22 passed. Verifier can thiệp 1/70 trial public, 7/40 trial đối kháng. Trên public T02 seed 55, swarm tin ticket báo trễ 5 ngày thay vì order 2 ngày; B3 đối chiếu order, quote 0 và từ chối. Workflow baseline trong B3 là module deterministic bonus-local theo hợp đồng Shape A; benchmark chính có kết quả Shape A chính thức.
+Nguồn: `src/reports/bonus_benchmark_public.json`, `src/reports/bonus_benchmark_adversarial.json` và `src/reports/bonus_analysis.json`. Test bonus: 22 passed. Verifier can thiệp 1/70 trial public, 7/40 trial đối kháng. Trên public T02 seed 55, swarm tin ticket báo trễ 5 ngày thay vì order 2 ngày; B3 đối chiếu order, quote 0 và từ chối. Benchmark B3 hiện so sánh với Shape A chính thức.
 
-Repo hiện cũng có code/report cho B1 (parallel orchestrator) do thành viên khác thêm. Quy định bonus chỉ cho chọn một topic cho cả nhóm; báo cáo này đang giữ B3 theo phân công hiện tại. Nhóm cần thống nhất topic duy nhất trước khi nộp và chỉ giữ report/kết quả tương ứng làm topic được chấm.
+Repo còn có code/report B1 (parallel orchestrator) do thành viên khác thêm, nhưng theo quyết định của nhóm trong ADR, **chỉ chọn B3** để được chấm bonus. B1 không phải topic bonus nộp.
 
 ### Kết quả nhóm còn thiếu
 
-Đã có benchmark public bốn shape, nhưng chưa có `student_drop/` để tự kiểm hidden. Chưa chọn shape chính; `decision_adr.md` và `research_card.md` còn trống. `python -m lab8.check_submission` xác nhận shapes, benchmark, crash report, contribution table và bonus report; hiện báo **8 FAIL** ở ADR và research card.
+Đã chọn `workflow` trong `decision_adr.md` dựa trên benchmark public. Chưa có `student_drop/` hoặc hidden grade, nên C2 và must-pass hidden chưa được xác nhận. `research_card.md` vẫn trống; `check_submission` còn lỗi ở research card cho đến khi hoàn tất.
 
 ## 5. Khó khăn và cách xử lý
 
@@ -68,11 +68,11 @@ Repo hiện cũng có code/report cho B1 (parallel orchestrator) do thành viên
 
 ## 6. Tổng hợp đóng góp
 
-Shape A do Đào Huy Hoàng, B do Ngô Đức Thịnh, C và B1 do Lê Hồng Quân phụ trách; D baseline và B3 do Phan Trọng Hậu phụ trách. B cần bổ sung test do thành viên phụ trách thêm hoặc sửa theo checklist đóng góp cá nhân.
+Shape A do Đào Huy Hoàng, B do Ngô Đức Thịnh, C do Lê Hồng Quân phụ trách; D baseline và B3 do Phan Trọng Hậu phụ trách. B cần bổ sung test do thành viên phụ trách thêm hoặc sửa theo checklist đóng góp cá nhân. B1 là artifact không chọn để chấm.
 
 ## 7. Hạn chế và hướng cải thiện
 
-MockLLM không phải model sản xuất và cost là giá mô phỏng; benchmark không đo latency. Bộ case B3 tự viết chỉ có tám claim nên không đại diện cho phân bố production. Cần nhận hidden pack, chọn shape chính dựa trên benchmark, điền ADR/research card và bổ sung test cho đóng góp B/C.
+MockLLM không phải model sản xuất và cost là giá mô phỏng; benchmark không đo latency. Bộ case B3 tự viết chỉ có tám claim nên không đại diện cho phân bố production. Cần nhận hidden pack để xác nhận C2 và must-pass; điền research card và bổ sung test cho đóng góp B.
 
 ## 8. Tài liệu tham khảo
 
