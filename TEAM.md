@@ -14,7 +14,7 @@
 |   1 | Đào Huy Hoàng       | 2A202603451     | 26ai.hoangdh@vinuni.edu.vn | [hoang2k3ai](https://github.com/hoang2k3ai) | Shape A — workflow |
 |   2 | Lê Hồng Quân       | 2A202603705     | 26ai.quanlh3@vinuni.edu.vn | [LeHongQuanMarble](https://github.com/LeHongQuanMarble) | Shape C — orchestrator + handoff; bonus B1 |
 |   3 | Phan Trọng Hậu       | 2A202603547     |       | [Phan-Trong-Hau](https://github.com/Phan-Trong-Hau) | D baseline + bonus B3, đánh giá |
-|   4 | Ngô Đức Thịnh       | 2A202603548     |       | [`NgooThinh05`](https://github.com/NgooThinh05) | Shape B — single |
+|   4 | Ngô Đức Thịnh       | 2A202603548     | 26ai.thinhnd2@vinuni.edu.vn | [`NgooThinh05`](https://github.com/NgooThinh05) | Shape B — single |
 
 Gợi ý chia vai:
 
@@ -30,7 +30,7 @@ Gợi ý chia vai:
 | Đào Huy Hoàng | Shape A — workflow (`src/lab8/shapes/workflow.py`) | `26c4fde` | `src/tests/test_workflow_extra.py`: `test_workflow_quotes_from_order_row_not_ticket`, `test_workflow_trace_has_no_ticket_or_secret` |
 | Phan Trọng Hậu | D baseline + bonus B3, đánh giá | `87b2508` | `src/tests/test_bonus_swarm_verified.py` (22 passed) |
 | Lê Hồng Quân | Shape C — orchestrator (`src/lab8/shapes/orchestrator.py`); bonus B1 | `fbe22ed`, `01e9ecf` | `src/tests/test_orchestrator_shape.py` (7 test); `src/tests/test_bonus_orchestrator_parallel.py` (song song, timing) |
-| Ngô Đức Thịnh | Shape B — single | `a517bc7` | Chưa thêm test trong commit; 62 test student của `test_public_matrix.py` đã pass |
+| Ngô Đức Thịnh | Shape B — single | `a517bc7` | `src/tests/test_single_shape.py` (5 test: ticket delay seed 55, trace secret/PII, per-order cap T13/T14, crash propagation, unknown claim) + 62 test student `single` |
 
 ## Cá nhân
 
@@ -127,6 +127,6 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 - Commit `a517bc7` (`Shape B single`).
-- Run id: `R-single-C-001-s11`, `R-single-C-002-s55`.
+- Test tự thêm: `src/tests/test_single_shape.py` (5 test).
+- Run id: `R-single-C-001-s11`, `R-single-C-002-s55`, `R-single-C-012-s11`.
 - Báo cáo cá nhân: `report/team/2A202603548_NgoDucThinh.md`.
-- Còn thiếu: test tự thêm hoặc sửa trong commit (theo tiêu chí C8), và email.

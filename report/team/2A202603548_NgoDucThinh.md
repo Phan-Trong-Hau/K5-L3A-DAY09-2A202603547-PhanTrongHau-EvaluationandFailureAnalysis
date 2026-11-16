@@ -17,7 +17,7 @@
 ## 3. Đóng góp cụ thể
 
 - **Commit chính:** `a517bc7` (`Shape B single`) — cài đặt hoàn chỉnh `src/lab8/shapes/single.py`.
-- **Kiểm thử:** Chạy và xác nhận pass toàn bộ 62 test của `single` trong `src/tests/test_public_matrix.py` (`test_public_single_run_cases`, `test_t11_retry_keeps_one_refund[single]`, `test_t12_crash_before_checkpoint_does_not_double_pay[single]`) và 54 test cổng host.
+- **Kiểm thử:** Thêm mới bộ unit test riêng [`src/tests/test_single_shape.py`](../../src/tests/test_single_shape.py) (5 test) và chạy xác nhận pass toàn bộ 62 test của `single` trong `src/tests/test_public_matrix.py` (`test_public_single_run_cases`, `test_t11_retry_keeps_one_refund[single]`, `test_t12_crash_before_checkpoint_does_not_double_pay[single]`) cùng cổng host.
 - **Các quyết định kỹ thuật chính:**
   1. **Giới hạn quyền của ReAct loop (`worker=True`, `max_steps=8`):** Dùng `lab8.runtime.run_react` với `worker=True` để ép mọi tool gọi trong vòng lặp `decide` chỉ nằm trong `READONLY_TOOLS` (`lookup_order`, `lookup_refund_history`, `compute_compensation`), tuyệt đối không cho model gọi `issue_refund`.
   2. **Ranh giới Code vs. Model (chống prompt injection & sai lệch dữ liệu ticket):** Chỉ dùng `MockLLM` (`complete`) để ghi nhận bước suy luận/soạn phản hồi và tính đúng `Budget`; mọi dữ kiện tính tiền (`delay_days`, `shipping_fee_vnd`, `paid_vnd`, `damage_verified`) đều lấy từ dòng `order` trong DB qua `lookup_order` và tính bằng `compute_compensation`, bỏ qua số ngày trễ hoặc điều khoản cũ (`SHIP-LATE-OLD`) do khách viết trong ticket.
@@ -28,10 +28,11 @@
 ## 4. Bằng chứng
 
 - **Commit:** `a517bc7` trên repo nhóm [`K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents`](https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents).
-- **File code:** [`src/lab8/shapes/single.py`](../../src/lab8/shapes/single.py).
+- **File code & test:** [`src/lab8/shapes/single.py`](../../src/lab8/shapes/single.py), [`src/tests/test_single_shape.py`](../../src/tests/test_single_shape.py) (5 test: `test_single_ignores_ticket_delay_even_on_seed_55`, `test_single_trace_omits_secrets_pii_and_ticket_text`, `test_single_passes_full_quote_for_per_order_cap`, `test_single_propagates_crash_and_resumes_once`, `test_single_unknown_claim_fails_cleanly_with_trace`).
 - **Kết quả chạy test thực tế (chạy trong `src/`):**
-  - `python -m pytest -q` → `54 passed, 248 deselected in 4.02s`.
-  - `python -m pytest -q -m student -o addopts= -k "single]"` → `62 passed, 240 deselected in 3.89s`.
+  - `python -m pytest -q tests/test_single_shape.py` → `5 passed`.
+  - `python -m pytest -q` → passed (toàn bộ cổng host + test nhóm).
+  - `python -m pytest -q -m student -o addopts= -k "single]"` → `62 passed, 240 deselected`.
 - **Run ID tiêu biểu:** `R-single-C-001-s11`, `R-single-C-002-s55` (pass đúng `denied`, không mắc lỗi tin ticket như `swarm`), `R-single-C-011-s11`, `R-single-C-012-s11`, `R-single-C-013-s11`, `R-single-C-014-s11`.
 
 ## 5. Công cụ AI đã dùng
