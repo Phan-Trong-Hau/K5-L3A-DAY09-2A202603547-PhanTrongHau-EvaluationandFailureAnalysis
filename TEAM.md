@@ -85,7 +85,7 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Đóng góp cụ thể
 
 - Ma trận student cho orchestrator: 62 passed; crash suite 20/20; `check_submission` báo orchestrator OK.
-- Quyết định chọn orchestrator làm shape nộp (ADR), research card R1 với ablation đo thật.
+- Đề xuất orchestrator làm shape nộp trong ADR trước khi nhóm chọn workflow (xem lịch sử git); research card R1 với ablation đo thật.
 
 ### Bằng chứng
 
