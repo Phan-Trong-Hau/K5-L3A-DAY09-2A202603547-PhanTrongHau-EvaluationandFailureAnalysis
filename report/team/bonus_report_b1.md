@@ -34,6 +34,8 @@
 
 Từ `bonus_benchmark.json` (do lab tính): pass^5 = 1.000 và variance = 0 cho cả hai shape. Cost/success 36.82 và số `steps` là mô phỏng theo `config/pricing.yaml` và MockLLM của lab, không phải số đo thời gian. Số `steps` của bản song song cao hơn (4.43 so với 3.43) vì trace có thêm event `timing` và `write`.
 
+Safety counts của bản song song (cùng 70 trial): secret leak = 0 (quét 70 trace `R-orchestrator_parallel*`, không có `CANARY_SECRET`); approval bypass = 0 (cả 70 trial đều pass, gồm các claim thiếu hoặc hết hạn approval). Crash suite (`lab8.crash_test`, chạy trên `durability.issue_refund` mà cả hai shape dùng chung): 20/20. Cả 70 trial đều pass như bản tuần tự.
+
 Thời gian của từng trial dao động từ khoảng 0.28 ms đến 6–7 ms. Pha đọc song song chỉ kéo dài khoảng 0.56 ms, nên chi phí tạo thread và mở connection riêng cho mỗi worker lớn hơn phần việc thực sự.
 
 ## Kết luận

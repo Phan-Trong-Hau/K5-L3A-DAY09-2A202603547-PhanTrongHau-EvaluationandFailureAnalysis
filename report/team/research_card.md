@@ -17,19 +17,20 @@ Phần này nối tiếp phần mini research ở buổi lý thuyết (slide 62�
 
 | Field | Hướng dẫn | Nhóm điền |
 | --- | --- | --- |
-| CÂU | R1 / R2 / R3 / R4 | |
-| SOURCE | Paper/blog, năm, URL, loại bằng chứng (benchmark, production report, blog kinh nghiệm) | |
-| CLAIM | Một kết luận gốc của nguồn. Không viết rộng hơn phạm vi paper | |
-| BOUNDARY | Model / dataset / setup giới hạn kết luận đó | |
-| HYPOTHESIS | Nếu đổi shape A→B (hoặc bật/tắt một thành phần), metric X sẽ đổi theo hướng nào, khoảng bao nhiêu | |
-| METHOD | Biến giữ cố định: model, tools, seed, corpus, giá, evaluator. Biến duy nhất được thay đổi: … | |
-| FAILURE / METRIC | Một lỗi dự kiến và cách đo nó: pass rate, pass^5, variance, cost/success, leak, bypass | |
+| CÂU | R1 / R2 / R3 / R4 | R1 |
+| SOURCE | Paper/blog, năm, URL, loại bằng chứng (benchmark, production report, blog kinh nghiệm) | Google Research, 2026, *Towards a Science of Scaling Agent Systems*. Loại bằng chứng: benchmark đa agent trên nhiều tác vụ (paper, không phải báo cáo production). Slide 15, 24, 33 của bài lý thuyết. |
+| CLAIM | Một kết luận gốc của nguồn. Không viết rộng hơn phạm vi paper | Multi-agent chỉ có lợi khi tác vụ chia được thành các phần song song. Với tác vụ tuần tự, các biến thể multi-agent được đo giảm hiệu năng khoảng 39–70%. |
+| BOUNDARY | Model / dataset / setup giới hạn kết luận đó | Agent gọi model ngôn ngữ thật, tác vụ có độ trễ model và tool lớn. LogiX: MockLLM tất định, tool đọc SQLite cục bộ (dưới 1 ms mỗi lần), 14 claim public × 5 seed. Kết luận của nguồn không áp dụng thẳng cho setup này. |
+| HYPOTHESIS | Nếu đổi shape A→B (hoặc bật/tắt một thành phần), metric X sẽ đổi theo hướng nào, khoảng bao nhiêu | Chạy hai bước đọc độc lập (`lookup_order`, `lookup_policy`) song song thay vì tuần tự sẽ giảm thời gian chạy trung bình của một claim, khoảng 1.1–1.3×. Pass rate và ledger không đổi. |
+| METHOD | Biến giữ cố định: model, tools, seed, corpus, giá, evaluator. Biến duy nhất được thay đổi: … | Cố định: MockLLM, tool, seed 11/22/33/44/55, 14 claim public, giá, evaluator `trial_pass`, store là bản copy của cùng một template. Biến duy nhất thay đổi: đọc hai bước độc lập tuần tự (orchestrator) hay song song (`orchestrator_parallel`, `ThreadPoolExecutor`, 2 worker). Mỗi trial đo 5 lần, thứ tự chạy luân phiên. |
+| FAILURE / METRIC | Một lỗi dự kiến và cách đo nó: pass rate, pass^5, variance, cost/success, leak, bypass | Lỗi dự kiến: chi phí tạo thread và kết nối SQLite lớn hơn phần việc thật, khiến bản song song chậm hơn. Đo bằng thời gian wall-clock median của `run_claim` (`time.perf_counter`) và số trial song song nhanh hơn, cộng với kiểm tra kết quả và ledger giống nhau. |
 
 ## Kết quả ablation
 
 - Lệnh đã chạy (copy nguyên văn):
-- Run id / file report:
-- Kết quả so với hypothesis (đúng / sai / không kết luận được), kèm số liệu:
-- Giới hạn: MockLLM không phải model sản xuất, latency là `unavailable`.
-
-Muốn đi xa hơn một ablation để lấy điểm cộng thì xem [docs/bonus_topics.md](../../docs/bonus_topics.md).
+  ```bash
+  python -m bonus.timing_report --seeds 11,22,33,44,55 --reps 5 --out reports/bonus_timing.json
+  ```
+- Run id / file report: `src/reports/bonus_timing.json`. Run id mẫu `R-orchestrator_parallel-C-001-s11` (trace trong `src/traces/`).
+- Kết quả so với hypothesis: **sai**. Tổng median 248.6 ms (tuần tự) so với 297.7 ms (song song). Speedup tổng 0.835, song song nhanh hơn ở 4/70 trial. Pass rate 1.000 cho cả hai, kết quả giống nhau 70/70. Pha đọc song song chỉ khoảng 0.56 ms, nhỏ hơn chi phí thread, nên hypothesis không được ủng hộ trong setup này.
+- Giới hạn: MockLLM không phải model sản xuất, latency model là thời gian đo thật trên một máy (8 CPU, Linux, SQLite 3.45.1), chỉ 14 claim public. Không có tool có độ trễ mạng, nên kết luận không suy ra được cho tool chậm.

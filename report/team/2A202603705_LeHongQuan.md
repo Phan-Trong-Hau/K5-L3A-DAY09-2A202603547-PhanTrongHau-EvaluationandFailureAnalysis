@@ -15,10 +15,13 @@
 
 ## 3. Đóng góp cụ thể
 
-- **Commit chính:** `fbe22ed` — "shape 03: orchestator by LeHongQuan_03705", đã push lên `origin/main`. Gồm `src/lab8/shapes/orchestrator.py`, `src/reports/benchmark.json`, `src/reports/crash.json`. Lần push đầu bị từ chối (non-fast-forward) vì đồng đội đã push `a517bc7` ("Shape B single"). Tôi rebase commit lên trên commit đó rồi push lại, không ghi đè.
-- **Test đã thêm (chưa commit tại thời điểm viết báo cáo):**
+- **Commit:**
+  - `fbe22ed` — "shape 03: orchestator by LeHongQuan_03705": `src/lab8/shapes/orchestrator.py`, `src/reports/benchmark.json`, `src/reports/crash.json`. Lần push đầu bị từ chối (non-fast-forward) vì đồng đội đã push `a517bc7` ("Shape B single"). Tôi rebase lên trên commit đó rồi push lại, không ghi đè.
+  - `01e9ecf` — "update orchestractor by LeHongQuan": test orchestrator, code B1, báo cáo B1 và số đo. Lúc rebase có xung đột với B3 của Phan Trọng Hậu ở `src/bonus/__init__.py` và `report/team/bonus_report.md`. Tôi giữ bản của Hậu ở đường dẫn chuẩn và đưa báo cáo B1 sang `bonus_report_b1.md`.
+  - `0ff146b` — thêm dòng của tôi vào bảng đóng góp trong `TEAM.md`.
+- **Test đã thêm:**
   - `src/tests/test_orchestrator_shape.py`, 7 test: investigator chỉ có tool đọc; handoff trong trace chỉ có field allowlist và không có `CANARY_SECRET`; trace vẫn được ghi ở nhánh `needs_info`; nhánh `escalated` không lộ PII; `denied` do approval thì không refund; quote là toàn bộ entitlement; crash lan ra ngoài và lần resume chỉ có một refund.
-  - `src/tests/test_bonus_orchestrator_parallel.py`: kết quả song song giống orchestrator tuần tự trên 14 claim × 2 seed; kết quả không đổi khi thứ tự thread thay đổi; event `timing` là số đo thật; trace không có secret; crash và resume.
+  - `src/tests/test_bonus_orchestrator_parallel.py`: kết quả song song giống orchestrator tuần tự trên 14 claim × 2 seed; kết quả không đổi khi thứ tự thread thay đổi; event `timing` là số đo thật, và worker không dài hơn pha đọc; trace không có secret; crash và resume.
 - **Quyết định kỹ thuật:**
   - Quote lấy từ investigator, không đọc ticket, nên không mắc lỗi `REFERENCE_WEAKNESS` của swarm ở seed % 5 == 0.
   - Không bắt `InjectedCrash`, đúng yêu cầu CP3. Vì vậy trace không có event `crash` khi crash.
@@ -26,12 +29,13 @@
 
 ## 4. Bằng chứng
 
-- Commit `fbe22ed` trên `origin/main`.
+- Commit `fbe22ed`, `01e9ecf`, `0ff146b` trên `origin/main`.
 - Test: `test_orchestrator_shape.py::test_crash_propagates_and_resume_keeps_one_refund`, `test_bonus_orchestrator_parallel.py::test_parallel_matches_sequential_orchestrator`.
 - Lệnh và kết quả (chạy trong `src/`):
   - `python -m lab8.crash_test --count 20 --out reports/crash.json` → `crash_safety 20/20`.
   - `python -m pytest -q -m student -o addopts= -k orchestrator` → 62 passed.
-  - `python -m pytest -q` → 94 passed.
+  - `python -m pytest -q -m student -o addopts=` (cả bốn shape) → 248 passed.
+  - `python -m pytest -q` → 118 passed. `python -m pytest -q tests/test_bonus_*.py` → 55 passed.
   - `python -m lab8.check_submission` → shape orchestrator OK, 12/12 claim public pass ở seed 11.
   - `python -m bonus.timing_report --seeds 11,22,33,44,55 --reps 5 --out reports/bonus_timing.json` → speedup song song/tuần tự **0.835** (tổng median 248.6 ms so với 297.7 ms). Song song nhanh hơn ở 4/70 trial. Kết quả giống nhau 70/70.
 - File số liệu: `src/reports/bonus_timing.json`, `src/reports/bonus_benchmark.json`, `src/reports/crash.json`, `src/reports/benchmark.json`.
@@ -40,21 +44,24 @@
 
 ## 5. Công cụ AI đã dùng
 
-- **Claude Code** (trợ lý lập trình trong terminal): đọc code lab, viết `orchestrator.py`
+- **Claude Code** (trợ lý lập trình trong terminal): đọc code lab, viết `orchestrator.py` và test, viết script đo thời gian, soạn báo cáo bonus, xử lý rebase và push.
 - **Cách tự kiểm tra:** mọi con số trong báo cáo đều chạy lại được bằng lệnh ở mục 4. Tôi kiểm tra từng kết quả bằng lệnh hoặc đọc file JSON do script sinh ra, không sửa tay file trong `src/reports/`. Phần cost (VND) và `steps` trong benchmark là mô phỏng theo thiết kế của lab, tôi không coi đó là số đo thời gian.
 
 ## 6. Tự đánh giá
 
 **Làm tốt:**
 - Shape orchestrator qua 62 test student, crash 20/20, không có canary trong trace, và không sửa file thước đo.
-- Xử lý lỗi push bằng rebase, không ghi đè commit của đồng đội.
+- Xử lý lỗi push và xung đột bằng rebase, không ghi đè commit của đồng đội.
 - Báo cáo bonus ghi đúng kết quả đo được, kể cả kết quả không ủng hộ giả thuyết (song song chậm hơn).
 
 **Còn yếu:**
 - B1 ban đầu dùng latency mô phỏng khi chưa được yêu cầu đo thật. Đến khi bạn yêu cầu tôi mới đổi. Lẽ ra nên đo thật ngay từ đầu.
-- Commit orchestrator không kèm test. Test được viết sau và chưa commit, nên theo tiêu chí C8 hiện tại tôi chưa đủ điều kiện.
+- Commit orchestrator đầu tiên (`fbe22ed`) không kèm test. Test được thêm ở `01e9ecf`, nên commit hiện tại có test, nhưng commit đầu thì không.
 - Chưa kiểm được pass rate trên bộ hidden 40 claim × 5 seed. Mới kiểm trên 14 claim public, nơi orchestrator đạt 1.000.
+- Benchmark chính (`src/reports/benchmark.json`) trong commit cũ còn số của thời workflow là stub. Tôi đã chạy lại và file mới chưa commit.
 
 **Việc tiếp theo:**
-- Commit test orchestrator và B1, rồi ghi commit hash vào `report/team/decision_adr.md` và bảng đóng góp trong `TEAM.md`.
-- Điền research card và ADR cùng nhóm, sau khi workflow hoàn thành.
+- Commit `src/reports/benchmark.json` mới.
+- Nhóm chọn shape nộp, rồi điền `decision_adr.md` (commit hash, run id, số liệu từ `benchmark.json` và `crash.json`).
+- Điền `research_card.md` cùng nhóm.
+- Nhắc Ngô Đức Thịnh thêm dòng của anh ấy vào bảng đóng góp `TEAM.md`.
