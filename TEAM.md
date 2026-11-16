@@ -5,7 +5,7 @@
 - Tên nhóm: HHTQ
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents, nhánh `main`, commit chốt `0424133` (trùng `report/team/decision_adr.md`)
+- URL repo, nhánh nộp, commit chốt: https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents, nhánh `main`, commit benchmark `ffb85f9` (được ghi trong `report/team/decision_adr.md`)
 
 ## Thành viên
 

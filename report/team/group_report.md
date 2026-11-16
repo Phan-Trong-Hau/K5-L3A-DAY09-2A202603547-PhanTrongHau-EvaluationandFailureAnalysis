@@ -4,9 +4,9 @@
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm: chưa điền.
-- Thành viên: xem `TEAM.md` (hiện bảng thành viên chưa được điền đầy đủ).
-- Commit chốt (trùng `report/team/decision_adr.md`): chưa có.
+- Tên nhóm: HHTQ.
+- Thành viên: xem `TEAM.md`.
+- Commit benchmark ghi nhận trong ADR: `ffb85f9`.
 
 ## 2. Mục tiêu và cách tiếp cận
 
@@ -58,7 +58,7 @@ Repo còn có code/report B1 (parallel orchestrator) do thành viên khác thêm
 
 ### Kết quả nhóm còn thiếu
 
-Đã chọn `workflow` trong `decision_adr.md` dựa trên benchmark public. Chưa có `student_drop/` hoặc hidden grade, nên C2 và must-pass hidden chưa được xác nhận. `research_card.md` vẫn trống; `check_submission` còn lỗi ở research card cho đến khi hoàn tất.
+Đã chọn `workflow` trong `decision_adr.md` dựa trên benchmark public và đã điền `research_card.md` với ablation R1. `python -m lab8.check_submission` hiện cho **0 FAIL** (có WARN tạm thời khi còn thay đổi chưa commit). Chưa có `student_drop/` hoặc hidden grade, nên C2 và must-pass hidden chưa được xác nhận.
 
 ## 5. Khó khăn và cách xử lý
 
