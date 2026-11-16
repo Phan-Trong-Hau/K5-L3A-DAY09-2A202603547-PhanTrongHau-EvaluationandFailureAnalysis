@@ -39,7 +39,7 @@ Benchmark cùng 14 claim × 5 seed; nguồn `src/reports/benchmark.json`. Chi ph
 
 Mỗi shape A/B/C qua **62/62 test student**; toàn ma trận **248 passed**. Cổng `python -m pytest -q`: **78 passed, 248 deselected**. Crash suite: **20/20** (`src/reports/crash.json`). Smoke pass.
 
-### Bonus B3 (kết quả hiện tại, chưa phải benchmark nhóm)
+### Bonus B3
 
 Số dưới đây lấy từ JSON benchmark do công cụ sinh ra, với 5 seed (11, 22, 33, 44, 55). Chi phí là VND mô phỏng; độ trễ không được đo.
 
@@ -52,7 +52,9 @@ Số dưới đây lấy từ JSON benchmark do công cụ sinh ra, với 5 seed
 | Tự viết, 8 claim | swarm_verified | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 53.88 | 4.18 / 5 |
 | Tự viết, 8 claim | workflow baseline | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 30.00 | 2.00 / 2 |
 
-Nguồn: `src/reports/bonus_benchmark_public.json`, `src/reports/bonus_benchmark_adversarial.json` và `src/reports/bonus_analysis.json`. Test bonus: 22 passed. Verifier can thiệp 1/70 trial public, 7/40 trial đối kháng. Trên public T02 seed 55, swarm tin ticket báo trễ 5 ngày thay vì order 2 ngày; B3 đối chiếu order, quote 0 và từ chối. Workflow baseline trong B3 là module deterministic bonus-local theo hợp đồng Shape A; benchmark chính hiện đã có kết quả Shape A chính thức.
+Nguồn: `src/reports/bonus_benchmark_public.json`, `src/reports/bonus_benchmark_adversarial.json` và `src/reports/bonus_analysis.json`. Test bonus: 22 passed. Verifier can thiệp 1/70 trial public, 7/40 trial đối kháng. Trên public T02 seed 55, swarm tin ticket báo trễ 5 ngày thay vì order 2 ngày; B3 đối chiếu order, quote 0 và từ chối. Workflow baseline trong B3 là module deterministic bonus-local theo hợp đồng Shape A; benchmark chính có kết quả Shape A chính thức.
+
+Repo hiện cũng có code/report cho B1 (parallel orchestrator) do thành viên khác thêm. Quy định bonus chỉ cho chọn một topic cho cả nhóm; báo cáo này đang giữ B3 theo phân công hiện tại. Nhóm cần thống nhất topic duy nhất trước khi nộp và chỉ giữ report/kết quả tương ứng làm topic được chấm.
 
 ### Kết quả nhóm còn thiếu
 
