@@ -6,11 +6,11 @@ Năm checkpoint bám theo lịch buổi lab 13:30–17:30 (nghỉ 15:15–15:30)
 
 | Checkpoint | Trạng thái hiện tại | Bằng chứng / phần còn lại |
 | --- | --- | --- |
-| CP1 — cài đặt, contract, chia vai | Đã đọc contract; môi trường Python 3.12 và dependencies chạy được | Chưa điền bảng thành viên/đóng góp trong `TEAM.md` |
-| CP2 — ba shape | **Đang làm.** Shape B `single` đã qua 62/62 test student. Shape A `workflow` và C `orchestrator` hiện vẫn là stub | Chạy riêng B: `python -m pytest -q -m student -o addopts= tests/test_public_matrix.py -k 'single and not workflow and not orchestrator and not swarm'`. A/C cần triển khai và chạy lại test |
-| CP3 — handoff, ledger, crash | Chưa kiểm chứng cho cả ba shape nhóm viết | Cần hoàn tất A/C, chạy T11/T12 và rà handoff của C |
+| CP1 — cài đặt, contract, chia vai | Đã đọc contract; môi trường Python 3.12 và dependencies chạy được | Đã ghi thông tin và đóng góp của Hậu; các thành viên khác cần điền vai trò, commit và test trong `TEAM.md` |
+| CP2 — ba shape | **Đang làm.** Shape B `single` và C `orchestrator` đã qua 62/62 test student. Shape A `workflow` vẫn là stub | Cần triển khai A và chạy lại test |
+| CP3 — handoff, ledger, crash | B và C qua test student gồm retry/crash; suite tổng quát hiện tại xanh | Cần kiểm lại A sau khi triển khai và rà must-pass của shape được chọn |
 | CP4 — crash, approval, secret | Crash suite hiện tại: **20/20** | `src/reports/crash.json` sinh từ harness; B3 cũng có test resume sau crash. Còn rà must-pass trên shape chính sau khi A/C hoàn thành và nhóm chọn shape |
-| CP5 — benchmark, hidden, báo cáo | Đã có benchmark riêng cho bonus B3; benchmark chính và hidden chưa chạy | Cần benchmark 4 shape và cập nhật ADR, research card, group report với dữ liệu cuối |
+| CP5 — benchmark, hidden, báo cáo | Đã chạy benchmark 4 shape; A đang stub nên pass rate là 0.000. Benchmark bonus B3 cũng có | Cần triển khai A, chạy lại benchmark, tự kiểm hidden và cập nhật ADR/research card với kết quả cuối |
 
 Shape D `swarm` có sẵn làm baseline. Bonus B3 (`swarm_verified`) đã có test và benchmark riêng; việc này không thay thế các checkpoint bắt buộc của A–C.
 
