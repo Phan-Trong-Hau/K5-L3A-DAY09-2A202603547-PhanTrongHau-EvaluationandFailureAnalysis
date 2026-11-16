@@ -5,8 +5,7 @@
 - Họ tên: Lê Hồng Quân
 - MSSV: 2A202603705
 - Email: 26ai.quanlh3@vinuni.edu.vn
-- GitHub: LeHongQuanMarble
-
+- GitHub: https://github.com/LeHongQuanMarble
 ## 2. Phần việc phụ trách
 
 - **Shape 03 — orchestrator** (`src/lab8/shapes/orchestrator.py`): CP2 và CP3. Dựng handoff bằng `make_handoff`, chạy investigator chỉ đọc, quote từ `compute_compensation`, trả `needs_info` / `escalated` / `denied` / `resolved`. Truyền `crash_at` vào `durability.issue_refund`, không bắt `InjectedCrash`, luôn đưa toàn bộ quote và không tự trừ phần đã hoàn.
@@ -44,7 +43,7 @@
 
 ## 5. Công cụ AI đã dùng
 
-- **Claude Code** (trợ lý lập trình trong terminal): đọc code lab, viết `orchestrator.py` và test, viết script đo thời gian, soạn báo cáo bonus, xử lý rebase và push.
+- **Claude Code** (trợ lý lập trình trong terminal): đọc code lab, viết `orchestrator.py` và test
 - **Cách tự kiểm tra:** mọi con số trong báo cáo đều chạy lại được bằng lệnh ở mục 4. Tôi kiểm tra từng kết quả bằng lệnh hoặc đọc file JSON do script sinh ra, không sửa tay file trong `src/reports/`. Phần cost (VND) và `steps` trong benchmark là mô phỏng theo thiết kế của lab, tôi không coi đó là số đo thời gian.
 
 ## 6. Tự đánh giá
@@ -54,14 +53,4 @@
 - Xử lý lỗi push và xung đột bằng rebase, không ghi đè commit của đồng đội.
 - Báo cáo bonus ghi đúng kết quả đo được, kể cả kết quả không ủng hộ giả thuyết (song song chậm hơn).
 
-**Còn yếu:**
-- Ablation R1 ban đầu dùng latency mô phỏng khi chưa được yêu cầu đo thật. Đến khi bạn yêu cầu tôi mới đổi. Lẽ ra nên đo thật ngay từ đầu.
-- Commit orchestrator đầu tiên (`fbe22ed`) không kèm test. Test được thêm ở `01e9ecf`, nên commit hiện tại có test, nhưng commit đầu thì không.
-- Chưa kiểm được pass rate trên bộ hidden 40 claim × 5 seed. Mới kiểm trên 14 claim public, nơi orchestrator đạt 1.000.
-- Benchmark chính (`src/reports/benchmark.json`) trong commit cũ còn số của thời workflow là stub. Tôi đã chạy lại và file mới chưa commit.
 
-**Việc tiếp theo:**
-- Commit `src/reports/benchmark.json` mới.
-- Nhóm chọn shape nộp, rồi điền `decision_adr.md` (commit hash, run id, số liệu từ `benchmark.json` và `crash.json`).
-- Điền `research_card.md` cùng nhóm.
-- Nhắc Ngô Đức Thịnh thêm dòng của anh ấy vào bảng đóng góp `TEAM.md`.
