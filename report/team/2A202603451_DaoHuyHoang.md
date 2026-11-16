@@ -101,4 +101,3 @@ giữ nguyên chữ ký `run_claim(claim_id, *, seed, store_path, crash_at=None)
     tự đứng được mà không có trợ lý.
   + Gặp xung đột khi push (rebase với nhánh của bạn cùng nhóm) — xử lý được nhưng mất
     thời gian; sau bài này tôi sẽ pull trước khi bắt đầu làm việc mỗi ngày.
-- Thời lượng thực tế: [...]
