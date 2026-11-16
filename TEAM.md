@@ -11,9 +11,10 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
-|   2 |        |      |       |        |         |
-
+|   1 | Đào Huy Hoàng       | 2A202603451     |       |        |         |
+|   2 | Lê Hồng Quân       | 2A202603705     |       |        |         |
+|   3 | Phan Trọng Hậu       | 2A202603547     |       |        |         |
+|   4 | Ngô Đức Thịnh       | 2A202603548     |       |        |         |
 Gợi ý chia vai:
 
 - Nhóm 6 người: integration; workflow; single agent; orchestrator; ledger/policy/crash; eval/report.
