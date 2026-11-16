@@ -5,14 +5,14 @@
 - Tên nhóm: HHTQ
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents, nhánh `main`, commit chốt `0424133` (trùng `report/team/decision_adr.md`)
+- URL repo, nhánh nộp, commit chốt: https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents, nhánh `main`, commit benchmark `ffb85f9` (được ghi trong `report/team/decision_adr.md`)
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Đào Huy Hoàng       | 2A202603451     | 26ai.hoangdh@vinuni.edu.vn | [hoang2k3ai](https://github.com/hoang2k3ai) | Shape A — workflow |
-|   2 | Lê Hồng Quân       | 2A202603705     | 26ai.quanlh3@vinuni.edu.vn | [LeHongQuanMarble](https://github.com/LeHongQuanMarble) | Shape C — orchestrator + handoff; bonus B1 |
+|   2 | Lê Hồng Quân       | 2A202603705     | 26ai.quanlh3@vinuni.edu.vn | [LeHongQuanMarble](https://github.com/LeHongQuanMarble) | Shape C — orchestrator + handoff; ablation nghiên cứu R1 |
 |   3 | Phan Trọng Hậu       | 2A202603547     |       | [Phan-Trong-Hau](https://github.com/Phan-Trong-Hau) | D baseline + bonus B3, đánh giá |
 |   4 | Ngô Đức Thịnh       | 2A202603548     | 26ai.thinhnd2@vinuni.edu.vn | [`NgooThinh05`](https://github.com/NgooThinh05) | Shape B — single |
 
@@ -29,7 +29,7 @@ Gợi ý chia vai:
 | --- | --- | --- | --- |
 | Đào Huy Hoàng | Shape A — workflow (`src/lab8/shapes/workflow.py`) | `26c4fde` | `src/tests/test_workflow_extra.py`: `test_workflow_quotes_from_order_row_not_ticket`, `test_workflow_trace_has_no_ticket_or_secret` |
 | Phan Trọng Hậu | D baseline + bonus B3, đánh giá | `87b2508` | `src/tests/test_bonus_swarm_verified.py` (22 passed) |
-| Lê Hồng Quân | Shape C — orchestrator (`src/lab8/shapes/orchestrator.py`); bonus B1 | `fbe22ed`, `01e9ecf` | `src/tests/test_orchestrator_shape.py` (7 test); `src/tests/test_bonus_orchestrator_parallel.py` (song song, timing) |
+| Lê Hồng Quân | Shape C — orchestrator (`src/lab8/shapes/orchestrator.py`); ablation R1 | `fbe22ed`, `01e9ecf` | `src/tests/test_orchestrator_shape.py` (7 test); `src/tests/test_bonus_orchestrator_parallel.py` (song song, timing) |
 | Ngô Đức Thịnh | Shape B — single | `a517bc7` | `src/tests/test_single_shape.py` (5 test: ticket delay seed 55, trace secret/PII, per-order cap T13/T14, crash propagation, unknown claim) + 62 test student `single` |
 
 ## Cá nhân
@@ -80,18 +80,18 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Phần việc phụ trách
 
 - Shape C — `orchestrator` (`src/lab8/shapes/orchestrator.py`): handoff qua `make_handoff`, investigator chỉ đọc qua `run_readonly_investigators`, quote từ `compute_compensation`, truyền `crash_at` vào `issue_refund` và không bắt `InjectedCrash`.
-- Bonus B1 — investigator song song (`src/bonus/orchestrator_parallel.py`, `src/bonus/timing_report.py`): kết quả đo thật, speedup 0.835, không ủng hộ giả thuyết.
+- Nghiên cứu R1 (research card) — investigator song song (`src/bonus/orchestrator_parallel.py`, `src/bonus/timing_report.py`): kết quả đo thật, speedup 0.835, không ủng hộ giả thuyết. Đây không phải topic bonus; topic bonus của nhóm là B3.
 
 ### Đóng góp cụ thể
 
 - Ma trận student cho orchestrator: 62 passed; crash suite 20/20; `check_submission` báo orchestrator OK.
-- Quyết định chọn orchestrator làm shape nộp (ADR), research card R1 với ablation đo thật.
+- Đề xuất orchestrator làm shape nộp trong ADR trước khi nhóm chọn workflow (xem lịch sử git); research card R1 với ablation đo thật.
 
 ### Bằng chứng
 
-- Commit `fbe22ed` (shape), `01e9ecf` (test và B1), `0ff146b` (dòng trong bảng này), `7b6c181` (ADR, research card, báo cáo cá nhân).
+- Commit `fbe22ed` (shape), `01e9ecf` (test và ablation R1), `0ff146b` (dòng trong bảng này), `7b6c181` (ADR, research card, báo cáo cá nhân).
 - Test tự thêm: `src/tests/test_orchestrator_shape.py` (7 test), `src/tests/test_bonus_orchestrator_parallel.py`.
-- Báo cáo cá nhân: `report/team/2A202603705_LeHongQuan.md`; báo cáo bonus: `report/team/bonus_report_b1.md`.
+- Báo cáo cá nhân: `report/team/2A202603705_LeHongQuan.md`.
 
 ## 2A202603547_PhanTrongHau
 
