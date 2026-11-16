@@ -3,7 +3,7 @@
 Điền sau dấu `:` trên cùng dòng, không xóa nhãn. Grader và `python -m lab8.check_submission` đọc các dòng này bằng máy. Shape được chọn để chấm hidden là `workflow`.
 
 - Shape chọn: workflow
-- Commit hash: `a63f01b` (commit bằng chứng benchmark/crash trên nhánh `main`)
+- Commit hash: `77619d7` (commit chốt, chứa benchmark/crash đã commit, trên nhánh `main`)
 - Run id dẫn chứng: `R-workflow-C-001-s11`
 - Pass rate / pass^5 / seed min-max / variance: public 14 claim × 5 seed = 1.000 / 1.000 / 1.000–1.000 / 0.000000; hidden chưa có grade
 - Cost per success (mô phỏng, VND): 28.78 (public; so với 38.40 single, 36.82 orchestrator, 49.57 swarm)

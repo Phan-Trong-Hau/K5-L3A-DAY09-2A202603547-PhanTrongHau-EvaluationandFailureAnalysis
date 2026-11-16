@@ -6,7 +6,7 @@
 
 - Tên nhóm: HHTQ
 - Thành viên: 4 người, chi tiết và bảng đóng góp trong `TEAM.md` (Đào Huy Hoàng — Shape A; Ngô Đức Thịnh — Shape B; Lê Hồng Quân — Shape C; Phan Trọng Hậu — baseline D + bonus B3).
-- Commit chốt (trùng `report/team/decision_adr.md`): `a63f01b` (nhánh `main`)
+- Commit chốt (trùng `report/team/decision_adr.md`): `77619d7` (nhánh `main`)
 
 ## 2. Mục tiêu và cách tiếp cận
 
