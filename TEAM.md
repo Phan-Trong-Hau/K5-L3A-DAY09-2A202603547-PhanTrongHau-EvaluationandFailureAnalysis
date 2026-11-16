@@ -5,7 +5,7 @@
 - Tên nhóm: HHTQ
 - Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents, nhánh `main`, commit benchmark `ffb85f9` (được ghi trong `report/team/decision_adr.md`)
+- URL repo, nhánh nộp, commit chốt: https://github.com/hoang2k3ai/K5-L3A-DAY08-HHTQ-FromWorkflowsToAgents, nhánh `main`, commit chốt: *(cập nhật ở bước nộp cuối cùng — xem `report/team/decision_adr.md`)*
 
 ## Thành viên
 
@@ -28,9 +28,10 @@ Gợi ý chia vai:
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
 | Đào Huy Hoàng | Shape A — workflow (`src/lab8/shapes/workflow.py`) | `26c4fde` | `src/tests/test_workflow_extra.py`: `test_workflow_quotes_from_order_row_not_ticket`, `test_workflow_trace_has_no_ticket_or_secret` |
+| Ngô Đức Thịnh | Shape B — single (`src/lab8/shapes/single.py`) | `a517bc7` | `src/tests/test_single_extra.py`: `test_single_stays_within_step_budget`, `test_single_quotes_from_order_row_not_ticket`, `test_single_trace_has_no_ticket_or_secret` |
+| Lê Hồng Quân | Shape C — orchestrator (`src/lab8/shapes/orchestrator.py`); ablation R1 | `fbe22ed`, `01e9ecf` | `src/tests/test_orchestrator_shape.py` (7 test); `src/tests/test_bonus_orchestrator_parallel.py` (song song, timing); `src/tests/test_orchestrator_extra.py` |
 | Phan Trọng Hậu | D baseline + bonus B3, đánh giá | `87b2508` | `src/tests/test_bonus_swarm_verified.py` (22 passed) |
-| Lê Hồng Quân | Shape C — orchestrator (`src/lab8/shapes/orchestrator.py`); ablation R1 | `fbe22ed`, `01e9ecf` | `src/tests/test_orchestrator_shape.py` (7 test); `src/tests/test_bonus_orchestrator_parallel.py` (song song, timing) |
-| Ngô Đức Thịnh | Shape B — single | `a517bc7` | `src/tests/test_single_shape.py` (5 test: ticket delay seed 55, trace secret/PII, per-order cap T13/T14, crash propagation, unknown claim) + 62 test student `single` |
+| Ngô Đức Thịnh | Shape B — single (`src/lab8/shapes/single.py`) | `a517bc7` | `src/tests/test_single_shape.py` (5 test: ticket delay seed 55, trace secret/PII, per-order cap T13/T14, crash propagation, unknown claim); `src/tests/test_single_extra.py` (3 test); 62 test student `single` |
 
 ## Cá nhân
 

@@ -86,6 +86,19 @@ giữ nguyên chữ ký `run_claim(claim_id, *, seed, store_path, crash_at=None)
 
 ## 6. Tự đánh giá
 
-- Điểm làm tốt: [...]
-- Điểm cần cải thiện: [...]
+- Điểm làm tốt: 
+  + Hoàn thành đúng hạn Shape A (workflow): 62/62 test student pass ngay lần 2 chạy,
+    không phá cổng host chung.
+  + Nắm được ranh giới quan trọng nhất của bài: tiền do `compute_compensation` (code)
+    tính, refund do host ghi; shape chỉ truyền quote đầy đủ, không tự trừ, không tự chối
+    khi approval hỏng (để host ghi audit `policy_denied`).
+  + Hiểu trace là ranh giới bảo mật chứ không phải log debug: không ghi ticket,
+    `parent_secret`, SĐT, địa chỉ vào trace; tự viết 2 test kiểm tra cả hai điều này.
+- Điểm cần cải thiện: 
+  + Lần này dùng AI (OpenCode) khá nhiều: đọc contract, gợi ý code, chia subtask, xử lý
+    xung đột git. Phần code shape tôi đã đọc lại và giải thích được từng nhánh, nhưng nếu
+    làm lại tôi sẽ tự viết khung `_run` trước rồi mới nhờ AI rà soát, để chắc chắn mình
+    tự đứng được mà không có trợ lý.
+  + Gặp xung đột khi push (rebase với nhánh của bạn cùng nhóm) — xử lý được nhưng mất
+    thời gian; sau bài này tôi sẽ pull trước khi bắt đầu làm việc mỗi ngày.
 - Thời lượng thực tế: [...]

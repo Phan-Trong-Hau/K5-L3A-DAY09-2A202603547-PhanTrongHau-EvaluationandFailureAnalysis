@@ -34,3 +34,5 @@ Phần này nối tiếp phần mini research ở buổi lý thuyết (slide 62�
 - Run id / file report: `src/reports/bonus_timing.json`. Run id mẫu `R-orchestrator_parallel-C-001-s11` (trace trong `src/traces/`).
 - Kết quả so với hypothesis: **sai**. Tổng median 248.6 ms (tuần tự) so với 297.7 ms (song song). Speedup tổng 0.835, song song nhanh hơn ở 4/70 trial. Pass rate 1.000 cho cả hai, kết quả giống nhau 70/70. Pha đọc song song chỉ khoảng 0.56 ms, nhỏ hơn chi phí thread, nên hypothesis không được ủng hộ trong setup này.
 - Giới hạn: MockLLM không phải model sản xuất, latency model là thời gian đo thật trên một máy (8 CPU, Linux, SQLite 3.45.1), chỉ 14 claim public. Không có tool có độ trễ mạng, nên kết luận không suy ra được cho tool chậm.
+
+Muốn đi xa hơn một ablation để lấy điểm cộng thì xem [docs/bonus_topics.md](../../docs/bonus_topics.md).
