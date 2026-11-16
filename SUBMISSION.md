@@ -74,9 +74,9 @@ Chạy trong `src/`:
 
 ## Checklist
 
-- [ ] Đổi tên repo theo đúng quy ước `K5-L3A-DAY08-…`.
-- [ ] Điền `TEAM.md` ở root: thông tin nhóm, thành viên, bảng đóng góp.
-- [ ] Mỗi thành viên có file báo cáo đã đổi tên đúng định dạng `report/team/MSSV_HoTen.md`.
+- [x] Đổi tên repo theo đúng quy ước `K5-L3A-DAY08-…`.
+- [x] Điền `TEAM.md` ở root: thông tin nhóm, thành viên, bảng đóng góp.
+- [x] Mỗi thành viên có file báo cáo đã đổi tên đúng định dạng `report/team/MSSV_HoTen.md`.
 - [ ] `report/team/group_report.md`, `decision_adr.md`, `research_card.md` đã điền đủ.
 - [ ] Mỗi thành viên có commit kỹ thuật và ít nhất một test trong lịch sử branch nộp bài.
 - [ ] Trong `src/`: `python -m pytest -q` xanh; có `reports/benchmark.json` và `reports/crash.json` do công cụ sinh ra.

@@ -1,0 +1,1775 @@
+{
+  "summary": {
+    "trials": 70,
+    "reps_per_shape": 5,
+    "identical_outcomes": 70,
+    "pass_rate_sequential": 1.0,
+    "pass_rate_parallel": 1.0,
+    "sequential_total_median_ms": 248.579,
+    "parallel_total_median_ms": 297.726,
+    "speedup_of_totals": 0.835,
+    "speedup_median_per_trial": 0.827,
+    "trials_parallel_faster": 4,
+    "read_phase_median_ms_across_trials": 0.564,
+    "environment": {
+      "python": "3.12.3",
+      "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+      "cpu_count": 8,
+      "sqlite": "3.45.1",
+      "max_workers": 2
+    },
+    "measurement": "wall-clock, time.perf_counter around run_claim; store copy excluded; includes trace write"
+  },
+  "trials": [
+    {
+      "claim_id": "C-001",
+      "seed": 11,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.502,
+        5.91,
+        6.602,
+        5.36,
+        8.137
+      ],
+      "parallel_ms": [
+        6.069,
+        6.449,
+        6.157,
+        6.21,
+        6.592
+      ],
+      "sequential_median_ms": 5.91,
+      "parallel_median_ms": 6.21,
+      "parallel_read_phase_median_ms": 0.568
+    },
+    {
+      "claim_id": "C-001",
+      "seed": 22,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.877,
+        5.574,
+        5.584,
+        5.427,
+        5.374
+      ],
+      "parallel_ms": [
+        6.879,
+        6.09,
+        6.966,
+        6.027,
+        7.178
+      ],
+      "sequential_median_ms": 5.574,
+      "parallel_median_ms": 6.879,
+      "parallel_read_phase_median_ms": 0.596
+    },
+    {
+      "claim_id": "C-001",
+      "seed": 33,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.368,
+        5.418,
+        5.382,
+        5.324,
+        5.373
+      ],
+      "parallel_ms": [
+        26.867,
+        7.073,
+        7.188,
+        6.035,
+        7.18
+      ],
+      "sequential_median_ms": 5.373,
+      "parallel_median_ms": 7.18,
+      "parallel_read_phase_median_ms": 0.621
+    },
+    {
+      "claim_id": "C-001",
+      "seed": 44,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.365,
+        5.338,
+        5.575,
+        5.713,
+        5.397
+      ],
+      "parallel_ms": [
+        6.072,
+        7.266,
+        6.237,
+        7.758,
+        5.795
+      ],
+      "sequential_median_ms": 5.397,
+      "parallel_median_ms": 6.237,
+      "parallel_read_phase_median_ms": 0.551
+    },
+    {
+      "claim_id": "C-001",
+      "seed": 55,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.781,
+        6.835,
+        5.501,
+        7.928,
+        5.667
+      ],
+      "parallel_ms": [
+        6.529,
+        6.811,
+        6.47,
+        6.373,
+        6.429
+      ],
+      "sequential_median_ms": 5.781,
+      "parallel_median_ms": 6.47,
+      "parallel_read_phase_median_ms": 0.596
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 11,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.624,
+        0.555,
+        0.516,
+        0.525,
+        0.528
+      ],
+      "parallel_ms": [
+        1.338,
+        1.449,
+        1.131,
+        1.066,
+        1.023
+      ],
+      "sequential_median_ms": 0.528,
+      "parallel_median_ms": 1.131,
+      "parallel_read_phase_median_ms": 0.54
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 22,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.566,
+        0.552,
+        0.525,
+        0.535,
+        0.518
+      ],
+      "parallel_ms": [
+        1.332,
+        1.069,
+        1.008,
+        1.002,
+        1.013
+      ],
+      "sequential_median_ms": 0.535,
+      "parallel_median_ms": 1.013,
+      "parallel_read_phase_median_ms": 0.466
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 33,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.529,
+        0.55,
+        0.669,
+        0.62,
+        0.539
+      ],
+      "parallel_ms": [
+        1.0,
+        0.999,
+        1.228,
+        1.433,
+        1.835
+      ],
+      "sequential_median_ms": 0.55,
+      "parallel_median_ms": 1.228,
+      "parallel_read_phase_median_ms": 0.499
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 44,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.564,
+        0.916,
+        0.925,
+        0.639,
+        0.592
+      ],
+      "parallel_ms": [
+        1.019,
+        1.767,
+        1.334,
+        1.197,
+        1.058
+      ],
+      "sequential_median_ms": 0.639,
+      "parallel_median_ms": 1.197,
+      "parallel_read_phase_median_ms": 0.539
+    },
+    {
+      "claim_id": "C-002",
+      "seed": 55,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.801,
+        0.597,
+        0.558,
+        0.622,
+        0.548
+      ],
+      "parallel_ms": [
+        1.283,
+        1.173,
+        1.368,
+        1.411,
+        1.188
+      ],
+      "sequential_median_ms": 0.597,
+      "parallel_median_ms": 1.283,
+      "parallel_read_phase_median_ms": 0.552
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 11,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.201,
+        7.126,
+        6.097,
+        5.457,
+        6.809
+      ],
+      "parallel_ms": [
+        7.19,
+        7.436,
+        6.114,
+        7.081,
+        6.858
+      ],
+      "sequential_median_ms": 6.201,
+      "parallel_median_ms": 7.081,
+      "parallel_read_phase_median_ms": 0.678
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 22,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.787,
+        5.47,
+        5.878,
+        5.287,
+        5.294
+      ],
+      "parallel_ms": [
+        6.446,
+        6.074,
+        7.005,
+        6.118,
+        7.138
+      ],
+      "sequential_median_ms": 5.47,
+      "parallel_median_ms": 6.446,
+      "parallel_read_phase_median_ms": 0.572
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 33,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.696,
+        5.492,
+        5.841,
+        5.612,
+        5.297
+      ],
+      "parallel_ms": [
+        7.889,
+        7.393,
+        6.152,
+        7.303,
+        6.106
+      ],
+      "sequential_median_ms": 5.612,
+      "parallel_median_ms": 7.303,
+      "parallel_read_phase_median_ms": 0.566
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 44,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.649,
+        6.081,
+        5.439,
+        6.648,
+        6.495
+      ],
+      "parallel_ms": [
+        6.08,
+        7.756,
+        6.027,
+        5.862,
+        5.96
+      ],
+      "sequential_median_ms": 6.081,
+      "parallel_median_ms": 6.027,
+      "parallel_read_phase_median_ms": 0.544
+    },
+    {
+      "claim_id": "C-003",
+      "seed": 55,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.832,
+        5.955,
+        6.13,
+        5.524,
+        6.297
+      ],
+      "parallel_ms": [
+        7.116,
+        6.5,
+        6.841,
+        6.568,
+        6.069
+      ],
+      "sequential_median_ms": 5.955,
+      "parallel_median_ms": 6.568,
+      "parallel_read_phase_median_ms": 0.726
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 11,
+      "status": "needs_info",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.389,
+        0.295,
+        0.273,
+        0.277,
+        0.275
+      ],
+      "parallel_ms": [
+        0.363,
+        0.308,
+        0.286,
+        0.302,
+        0.277
+      ],
+      "sequential_median_ms": 0.277,
+      "parallel_median_ms": 0.302,
+      "parallel_read_phase_median_ms": null
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 22,
+      "status": "needs_info",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.376,
+        0.371,
+        0.295,
+        0.266,
+        0.261
+      ],
+      "parallel_ms": [
+        0.293,
+        0.299,
+        0.287,
+        0.292,
+        0.297
+      ],
+      "sequential_median_ms": 0.295,
+      "parallel_median_ms": 0.293,
+      "parallel_read_phase_median_ms": null
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 33,
+      "status": "needs_info",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.364,
+        0.283,
+        0.274,
+        0.279,
+        0.28
+      ],
+      "parallel_ms": [
+        0.386,
+        0.32,
+        0.284,
+        0.284,
+        0.287
+      ],
+      "sequential_median_ms": 0.28,
+      "parallel_median_ms": 0.287,
+      "parallel_read_phase_median_ms": null
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 44,
+      "status": "needs_info",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.375,
+        0.313,
+        0.281,
+        0.278,
+        0.286
+      ],
+      "parallel_ms": [
+        0.532,
+        0.309,
+        0.29,
+        0.296,
+        0.273
+      ],
+      "sequential_median_ms": 0.286,
+      "parallel_median_ms": 0.296,
+      "parallel_read_phase_median_ms": null
+    },
+    {
+      "claim_id": "C-004",
+      "seed": 55,
+      "status": "needs_info",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.303,
+        0.287,
+        0.273,
+        0.323,
+        0.278
+      ],
+      "parallel_ms": [
+        0.391,
+        0.4,
+        0.289,
+        0.294,
+        0.299
+      ],
+      "sequential_median_ms": 0.287,
+      "parallel_median_ms": 0.299,
+      "parallel_read_phase_median_ms": null
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 11,
+      "status": "escalated",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.534,
+        0.469,
+        0.49,
+        0.514,
+        0.461
+      ],
+      "parallel_ms": [
+        1.058,
+        0.939,
+        0.901,
+        1.03,
+        0.92
+      ],
+      "sequential_median_ms": 0.49,
+      "parallel_median_ms": 0.939,
+      "parallel_read_phase_median_ms": 0.462
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 22,
+      "status": "escalated",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.515,
+        0.474,
+        0.448,
+        0.497,
+        0.455
+      ],
+      "parallel_ms": [
+        0.944,
+        0.897,
+        0.893,
+        0.841,
+        1.019
+      ],
+      "sequential_median_ms": 0.474,
+      "parallel_median_ms": 0.897,
+      "parallel_read_phase_median_ms": 0.464
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 33,
+      "status": "escalated",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.76,
+        0.785,
+        0.992,
+        0.498,
+        0.495
+      ],
+      "parallel_ms": [
+        1.426,
+        1.299,
+        1.618,
+        1.552,
+        0.966
+      ],
+      "sequential_median_ms": 0.76,
+      "parallel_median_ms": 1.426,
+      "parallel_read_phase_median_ms": 0.648
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 44,
+      "status": "escalated",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.553,
+        0.569,
+        0.497,
+        0.534,
+        0.49
+      ],
+      "parallel_ms": [
+        1.067,
+        1.073,
+        1.272,
+        1.12,
+        0.909
+      ],
+      "sequential_median_ms": 0.534,
+      "parallel_median_ms": 1.073,
+      "parallel_read_phase_median_ms": 0.516
+    },
+    {
+      "claim_id": "C-005",
+      "seed": 55,
+      "status": "escalated",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.51,
+        0.498,
+        0.497,
+        0.506,
+        0.488
+      ],
+      "parallel_ms": [
+        0.972,
+        0.973,
+        1.031,
+        0.975,
+        0.962
+      ],
+      "sequential_median_ms": 0.498,
+      "parallel_median_ms": 0.973,
+      "parallel_read_phase_median_ms": 0.48
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 11,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.584,
+        0.557,
+        0.502,
+        0.501,
+        0.479
+      ],
+      "parallel_ms": [
+        1.145,
+        0.983,
+        1.001,
+        0.962,
+        1.395
+      ],
+      "sequential_median_ms": 0.502,
+      "parallel_median_ms": 1.001,
+      "parallel_read_phase_median_ms": 0.488
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 22,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.837,
+        0.595,
+        0.55,
+        0.556,
+        0.504
+      ],
+      "parallel_ms": [
+        1.321,
+        1.186,
+        1.076,
+        1.055,
+        1.152
+      ],
+      "sequential_median_ms": 0.556,
+      "parallel_median_ms": 1.152,
+      "parallel_read_phase_median_ms": 0.556
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 33,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.55,
+        0.547,
+        0.51,
+        0.536,
+        0.503
+      ],
+      "parallel_ms": [
+        1.022,
+        0.992,
+        1.041,
+        1.008,
+        0.989
+      ],
+      "sequential_median_ms": 0.536,
+      "parallel_median_ms": 1.008,
+      "parallel_read_phase_median_ms": 0.466
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 44,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.489,
+        0.573,
+        0.505,
+        0.525,
+        0.533
+      ],
+      "parallel_ms": [
+        0.863,
+        1.331,
+        1.151,
+        1.024,
+        1.02
+      ],
+      "sequential_median_ms": 0.525,
+      "parallel_median_ms": 1.024,
+      "parallel_read_phase_median_ms": 0.493
+    },
+    {
+      "claim_id": "C-006",
+      "seed": 55,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.516,
+        0.536,
+        0.505,
+        0.522,
+        0.503
+      ],
+      "parallel_ms": [
+        0.913,
+        0.967,
+        1.045,
+        0.99,
+        0.977
+      ],
+      "sequential_median_ms": 0.516,
+      "parallel_median_ms": 0.977,
+      "parallel_read_phase_median_ms": 0.45
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 11,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        4.182,
+        3.394,
+        3.531,
+        4.225,
+        3.439
+      ],
+      "parallel_ms": [
+        4.824,
+        3.942,
+        3.915,
+        4.429,
+        3.942
+      ],
+      "sequential_median_ms": 3.531,
+      "parallel_median_ms": 3.942,
+      "parallel_read_phase_median_ms": 0.588
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 22,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        3.235,
+        3.209,
+        3.158,
+        3.237,
+        3.239
+      ],
+      "parallel_ms": [
+        4.203,
+        4.819,
+        3.95,
+        3.856,
+        4.828
+      ],
+      "sequential_median_ms": 3.235,
+      "parallel_median_ms": 4.203,
+      "parallel_read_phase_median_ms": 0.534
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 33,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        3.228,
+        3.391,
+        4.233,
+        3.313,
+        3.235
+      ],
+      "parallel_ms": [
+        3.874,
+        3.944,
+        5.287,
+        3.96,
+        3.888
+      ],
+      "sequential_median_ms": 3.313,
+      "parallel_median_ms": 3.944,
+      "parallel_read_phase_median_ms": 0.512
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 44,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        4.391,
+        3.845,
+        3.703,
+        4.421,
+        3.364
+      ],
+      "parallel_ms": [
+        3.794,
+        3.893,
+        3.901,
+        4.183,
+        4.745
+      ],
+      "sequential_median_ms": 3.845,
+      "parallel_median_ms": 3.901,
+      "parallel_read_phase_median_ms": 0.551
+    },
+    {
+      "claim_id": "C-007",
+      "seed": 55,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        3.552,
+        3.855,
+        3.363,
+        3.302,
+        3.753
+      ],
+      "parallel_ms": [
+        3.95,
+        5.25,
+        3.942,
+        4.379,
+        4.569
+      ],
+      "sequential_median_ms": 3.552,
+      "parallel_median_ms": 4.379,
+      "parallel_read_phase_median_ms": 0.537
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 11,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.703,
+        5.58,
+        6.198,
+        5.717,
+        6.125
+      ],
+      "parallel_ms": [
+        7.53,
+        6.245,
+        6.553,
+        7.558,
+        6.072
+      ],
+      "sequential_median_ms": 5.717,
+      "parallel_median_ms": 6.553,
+      "parallel_read_phase_median_ms": 0.595
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 22,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.999,
+        5.944,
+        5.781,
+        6.612,
+        5.716
+      ],
+      "parallel_ms": [
+        6.321,
+        7.48,
+        6.584,
+        7.296,
+        7.173
+      ],
+      "sequential_median_ms": 5.944,
+      "parallel_median_ms": 7.173,
+      "parallel_read_phase_median_ms": 0.659
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 33,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.058,
+        6.383,
+        5.898,
+        6.325,
+        6.482
+      ],
+      "parallel_ms": [
+        6.543,
+        6.625,
+        6.198,
+        6.288,
+        5.982
+      ],
+      "sequential_median_ms": 6.325,
+      "parallel_median_ms": 6.288,
+      "parallel_read_phase_median_ms": 0.575
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 44,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.863,
+        5.457,
+        5.842,
+        5.597,
+        5.43
+      ],
+      "parallel_ms": [
+        6.93,
+        6.141,
+        6.908,
+        6.086,
+        7.116
+      ],
+      "sequential_median_ms": 5.597,
+      "parallel_median_ms": 6.908,
+      "parallel_read_phase_median_ms": 0.582
+    },
+    {
+      "claim_id": "C-008",
+      "seed": 55,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.518,
+        5.575,
+        5.716,
+        5.453,
+        5.328
+      ],
+      "parallel_ms": [
+        7.424,
+        6.116,
+        6.765,
+        6.856,
+        5.964
+      ],
+      "sequential_median_ms": 5.518,
+      "parallel_median_ms": 6.765,
+      "parallel_read_phase_median_ms": 0.563
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 11,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.538,
+        0.58,
+        0.582,
+        0.539,
+        0.498
+      ],
+      "parallel_ms": [
+        1.115,
+        1.023,
+        1.02,
+        1.085,
+        1.156
+      ],
+      "sequential_median_ms": 0.539,
+      "parallel_median_ms": 1.085,
+      "parallel_read_phase_median_ms": 0.493
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 22,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.593,
+        0.552,
+        0.518,
+        0.529,
+        0.531
+      ],
+      "parallel_ms": [
+        1.098,
+        0.995,
+        1.193,
+        1.076,
+        1.17
+      ],
+      "sequential_median_ms": 0.531,
+      "parallel_median_ms": 1.098,
+      "parallel_read_phase_median_ms": 0.526
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 33,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.543,
+        0.567,
+        0.566,
+        0.793,
+        0.844
+      ],
+      "parallel_ms": [
+        1.051,
+        1.033,
+        1.278,
+        1.311,
+        2.101
+      ],
+      "sequential_median_ms": 0.567,
+      "parallel_median_ms": 1.278,
+      "parallel_read_phase_median_ms": 0.569
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 44,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.589,
+        0.581,
+        0.516,
+        0.6,
+        0.539
+      ],
+      "parallel_ms": [
+        1.103,
+        1.133,
+        1.229,
+        1.053,
+        1.186
+      ],
+      "sequential_median_ms": 0.581,
+      "parallel_median_ms": 1.133,
+      "parallel_read_phase_median_ms": 0.536
+    },
+    {
+      "claim_id": "C-009",
+      "seed": 55,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        0.546,
+        0.57,
+        0.597,
+        0.572,
+        0.521
+      ],
+      "parallel_ms": [
+        1.033,
+        1.044,
+        1.153,
+        1.068,
+        1.016
+      ],
+      "sequential_median_ms": 0.57,
+      "parallel_median_ms": 1.044,
+      "parallel_read_phase_median_ms": 0.47
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 11,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.528,
+        5.347,
+        5.429,
+        5.398,
+        5.43
+      ],
+      "parallel_ms": [
+        5.964,
+        7.094,
+        6.113,
+        7.234,
+        6.012
+      ],
+      "sequential_median_ms": 5.429,
+      "parallel_median_ms": 6.113,
+      "parallel_read_phase_median_ms": 0.538
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 22,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.27,
+        6.529,
+        5.244,
+        6.579,
+        5.294
+      ],
+      "parallel_ms": [
+        6.022,
+        6.164,
+        6.003,
+        5.971,
+        6.282
+      ],
+      "sequential_median_ms": 5.294,
+      "parallel_median_ms": 6.022,
+      "parallel_read_phase_median_ms": 0.554
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 33,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.673,
+        5.334,
+        7.043,
+        6.1,
+        7.475
+      ],
+      "parallel_ms": [
+        6.027,
+        5.867,
+        8.017,
+        6.731,
+        7.416
+      ],
+      "sequential_median_ms": 6.1,
+      "parallel_median_ms": 6.731,
+      "parallel_read_phase_median_ms": 0.672
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 44,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.559,
+        5.546,
+        5.799,
+        5.589,
+        5.424
+      ],
+      "parallel_ms": [
+        7.401,
+        6.27,
+        7.444,
+        5.991,
+        8.148
+      ],
+      "sequential_median_ms": 5.589,
+      "parallel_median_ms": 7.401,
+      "parallel_read_phase_median_ms": 0.675
+    },
+    {
+      "claim_id": "C-010",
+      "seed": 55,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.487,
+        6.063,
+        5.838,
+        5.474,
+        6.173
+      ],
+      "parallel_ms": [
+        7.631,
+        7.572,
+        6.947,
+        7.327,
+        6.154
+      ],
+      "sequential_median_ms": 6.063,
+      "parallel_median_ms": 7.327,
+      "parallel_read_phase_median_ms": 0.624
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 11,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.197,
+        6.108,
+        5.344,
+        6.367,
+        5.428
+      ],
+      "parallel_ms": [
+        6.206,
+        6.303,
+        6.382,
+        5.946,
+        6.12
+      ],
+      "sequential_median_ms": 6.108,
+      "parallel_median_ms": 6.206,
+      "parallel_read_phase_median_ms": 0.685
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 22,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.461,
+        5.326,
+        6.795,
+        5.289,
+        6.416
+      ],
+      "parallel_ms": [
+        6.014,
+        5.962,
+        5.763,
+        5.979,
+        7.278
+      ],
+      "sequential_median_ms": 5.461,
+      "parallel_median_ms": 5.979,
+      "parallel_read_phase_median_ms": 0.564
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 33,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        18.244,
+        5.497,
+        6.31,
+        6.27,
+        7.325
+      ],
+      "parallel_ms": [
+        6.113,
+        7.011,
+        6.317,
+        6.815,
+        6.831
+      ],
+      "sequential_median_ms": 6.31,
+      "parallel_median_ms": 6.815,
+      "parallel_read_phase_median_ms": 0.625
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 44,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.952,
+        5.265,
+        5.405,
+        5.679,
+        5.577
+      ],
+      "parallel_ms": [
+        7.778,
+        6.288,
+        7.776,
+        6.38,
+        6.598
+      ],
+      "sequential_median_ms": 5.577,
+      "parallel_median_ms": 6.598,
+      "parallel_read_phase_median_ms": 0.601
+    },
+    {
+      "claim_id": "C-011",
+      "seed": 55,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.289,
+        5.559,
+        5.801,
+        5.454,
+        5.566
+      ],
+      "parallel_ms": [
+        6.075,
+        7.155,
+        6.134,
+        7.475,
+        6.055
+      ],
+      "sequential_median_ms": 5.559,
+      "parallel_median_ms": 6.134,
+      "parallel_read_phase_median_ms": 0.562
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 11,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.295,
+        6.952,
+        5.519,
+        6.597,
+        5.542
+      ],
+      "parallel_ms": [
+        6.493,
+        5.977,
+        6.227,
+        6.078,
+        6.275
+      ],
+      "sequential_median_ms": 5.542,
+      "parallel_median_ms": 6.227,
+      "parallel_read_phase_median_ms": 0.601
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 22,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.446,
+        5.28,
+        6.344,
+        5.269,
+        6.307
+      ],
+      "parallel_ms": [
+        6.182,
+        5.953,
+        6.098,
+        6.133,
+        6.213
+      ],
+      "sequential_median_ms": 6.307,
+      "parallel_median_ms": 6.133,
+      "parallel_read_phase_median_ms": 0.622
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 33,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.309,
+        5.32,
+        5.379,
+        5.345,
+        5.543
+      ],
+      "parallel_ms": [
+        7.276,
+        6.117,
+        7.404,
+        5.916,
+        6.656
+      ],
+      "sequential_median_ms": 5.345,
+      "parallel_median_ms": 6.656,
+      "parallel_read_phase_median_ms": 0.553
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 44,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.309,
+        5.309,
+        5.494,
+        5.379,
+        5.35
+      ],
+      "parallel_ms": [
+        5.94,
+        6.919,
+        7.408,
+        7.234,
+        5.887
+      ],
+      "sequential_median_ms": 5.35,
+      "parallel_median_ms": 6.919,
+      "parallel_read_phase_median_ms": 0.561
+    },
+    {
+      "claim_id": "C-012",
+      "seed": 55,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.606,
+        6.359,
+        5.399,
+        6.857,
+        5.597
+      ],
+      "parallel_ms": [
+        6.411,
+        6.439,
+        7.058,
+        6.006,
+        6.816
+      ],
+      "sequential_median_ms": 5.606,
+      "parallel_median_ms": 6.439,
+      "parallel_read_phase_median_ms": 0.562
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 11,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        3.81,
+        3.77,
+        3.357,
+        4.618,
+        5.505
+      ],
+      "parallel_ms": [
+        5.794,
+        4.317,
+        4.209,
+        4.95,
+        5.159
+      ],
+      "sequential_median_ms": 3.81,
+      "parallel_median_ms": 4.95,
+      "parallel_read_phase_median_ms": 0.647
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 22,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        3.406,
+        3.713,
+        4.075,
+        3.374,
+        3.333
+      ],
+      "parallel_ms": [
+        3.858,
+        4.792,
+        5.321,
+        4.141,
+        4.958
+      ],
+      "sequential_median_ms": 3.406,
+      "parallel_median_ms": 4.792,
+      "parallel_read_phase_median_ms": 0.603
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 33,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.938,
+        3.61,
+        4.361,
+        3.253,
+        3.234
+      ],
+      "parallel_ms": [
+        4.25,
+        5.336,
+        4.495,
+        3.845,
+        3.939
+      ],
+      "sequential_median_ms": 3.61,
+      "parallel_median_ms": 4.25,
+      "parallel_read_phase_median_ms": 0.569
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 44,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        3.547,
+        3.355,
+        3.44,
+        3.631,
+        3.296
+      ],
+      "parallel_ms": [
+        4.064,
+        4.056,
+        4.03,
+        4.678,
+        3.938
+      ],
+      "sequential_median_ms": 3.44,
+      "parallel_median_ms": 4.056,
+      "parallel_read_phase_median_ms": 0.607
+    },
+    {
+      "claim_id": "C-013",
+      "seed": 55,
+      "status": "denied",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        3.391,
+        3.318,
+        3.197,
+        3.358,
+        4.332
+      ],
+      "parallel_ms": [
+        4.909,
+        6.172,
+        3.956,
+        5.019,
+        4.281
+      ],
+      "sequential_median_ms": 3.358,
+      "parallel_median_ms": 4.909,
+      "parallel_read_phase_median_ms": 0.652
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 11,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.61,
+        5.395,
+        5.288,
+        5.264,
+        5.65
+      ],
+      "parallel_ms": [
+        7.293,
+        6.595,
+        6.993,
+        6.262,
+        6.343
+      ],
+      "sequential_median_ms": 5.395,
+      "parallel_median_ms": 6.595,
+      "parallel_read_phase_median_ms": 0.6
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 22,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.378,
+        5.432,
+        6.286,
+        5.942,
+        5.552
+      ],
+      "parallel_ms": [
+        6.244,
+        7.962,
+        6.072,
+        6.723,
+        6.877
+      ],
+      "sequential_median_ms": 5.552,
+      "parallel_median_ms": 6.723,
+      "parallel_read_phase_median_ms": 0.576
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 33,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.133,
+        6.823,
+        5.415,
+        6.035,
+        6.188
+      ],
+      "parallel_ms": [
+        7.008,
+        5.983,
+        6.12,
+        6.305,
+        6.531
+      ],
+      "sequential_median_ms": 6.133,
+      "parallel_median_ms": 6.305,
+      "parallel_read_phase_median_ms": 0.562
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 44,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        6.408,
+        5.945,
+        7.379,
+        5.991,
+        5.973
+      ],
+      "parallel_ms": [
+        6.369,
+        6.674,
+        7.117,
+        6.607,
+        7.596
+      ],
+      "sequential_median_ms": 5.991,
+      "parallel_median_ms": 6.674,
+      "parallel_read_phase_median_ms": 0.603
+    },
+    {
+      "claim_id": "C-014",
+      "seed": 55,
+      "status": "resolved",
+      "identical_outcome": true,
+      "pass_sequential": true,
+      "pass_parallel": true,
+      "sequential_ms": [
+        5.401,
+        5.825,
+        5.86,
+        6.174,
+        6.755
+      ],
+      "parallel_ms": [
+        6.878,
+        5.874,
+        7.626,
+        7.025,
+        6.826
+      ],
+      "sequential_median_ms": 5.86,
+      "parallel_median_ms": 6.878,
+      "parallel_read_phase_median_ms": 0.617
+    }
+  ]
+}
