@@ -1,0 +1,96 @@
+{
+  "public": {
+    "benchmark": "reports/bonus_benchmark_public.json",
+    "swarm_verified_trials": 70,
+    "verifier_override_count": 1,
+    "traces_missing": [],
+    "examples": [
+      {
+        "claim_id": "C-002",
+        "seed": 55,
+        "event": {
+          "kind": "verifier_override",
+          "payload": {
+            "fields": [
+              "delay_days"
+            ],
+            "amount_vnd": 0
+          }
+        }
+      }
+    ]
+  },
+  "adversarial": {
+    "benchmark": "reports/bonus_benchmark_adversarial.json",
+    "swarm_verified_trials": 40,
+    "verifier_override_count": 7,
+    "traces_missing": [],
+    "examples": [
+      {
+        "claim_id": "B3-001",
+        "seed": 55,
+        "event": {
+          "kind": "verifier_override",
+          "payload": {
+            "fields": [
+              "delay_days"
+            ],
+            "amount_vnd": 0
+          }
+        }
+      },
+      {
+        "claim_id": "B3-002",
+        "seed": 55,
+        "event": {
+          "kind": "verifier_override",
+          "payload": {
+            "fields": [
+              "delay_days"
+            ],
+            "amount_vnd": 35000
+          }
+        }
+      },
+      {
+        "claim_id": "B3-004",
+        "seed": 55,
+        "event": {
+          "kind": "verifier_override",
+          "payload": {
+            "fields": [
+              "delay_days"
+            ],
+            "amount_vnd": 0
+          }
+        }
+      },
+      {
+        "claim_id": "B3-005",
+        "seed": 55,
+        "event": {
+          "kind": "verifier_override",
+          "payload": {
+            "fields": [
+              "delay_days"
+            ],
+            "amount_vnd": 0
+          }
+        }
+      },
+      {
+        "claim_id": "B3-006",
+        "seed": 55,
+        "event": {
+          "kind": "verifier_override",
+          "payload": {
+            "fields": [
+              "delay_days"
+            ],
+            "amount_vnd": 35000
+          }
+        }
+      }
+    ]
+  }
+}
