@@ -4,9 +4,6 @@ from types import SimpleNamespace
 import pytest
 
 from lab8.shapes import SHAPES
-from lab9.graders import DbFactKept, ProposalAmountCorrect, ReplyLedgerConsistent
-from lab9.trace_case import investigate
-from lab9.variant_agent import make_shape
 
 pytestmark = pytest.mark.student
 
@@ -20,6 +17,9 @@ def restore_shape_registry():
 
 
 def test_lab9_trace_ticket_override_regression():
+    from lab9.graders import DbFactKept, ProposalAmountCorrect
+    from lab9.trace_case import investigate
+
     broken = investigate('seeded_regression', 'C-002', 11)
     fixed = investigate('fixed', 'C-002', 11)
     for case, expected in ((broken, False), (fixed, True)):
@@ -30,6 +30,10 @@ def test_lab9_trace_ticket_override_regression():
 
 
 def test_lab9_misreport_correct_ledger_is_still_a_failure():
+    from lab9.graders import ReplyLedgerConsistent
+    from lab9.trace_case import investigate
+    from lab9.variant_agent import make_shape
+
     SHAPES['test_misreport'] = make_shape('test_misreport', {'no_override', 'misreport'})
     try:
         broken = investigate('test_misreport', 'C-008', 11)
@@ -43,6 +47,9 @@ def test_lab9_misreport_correct_ledger_is_still_a_failure():
 
 
 def test_lab9_honest_paraphrase_has_no_reply_false_alarm():
+    from lab9.graders import ReplyLedgerConsistent
+    from lab9.trace_case import investigate
+
     case = investigate('honest_refactor', 'C-008', 11)
     ctx = SimpleNamespace(output=case['trial'], expected_output=case['label'])
     assert ReplyLedgerConsistent().evaluate(ctx).value is True
