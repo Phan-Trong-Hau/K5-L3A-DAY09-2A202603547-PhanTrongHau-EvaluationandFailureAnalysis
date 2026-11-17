@@ -79,3 +79,7 @@ Sau khi đối chiếu 4 tài liệu trong lab9-starter, đã bổ sung section 
 ## Đối chiếu trừ điểm / Bonus / Expert
 
 [Biên bản kiểm tra](PenaltyExpertAudit.md): không phát hiện vi phạm 5 khoản trừ điểm; báo cáo runtime tái lập khớp. Bonus đã được bổ sung bằng Inspect AI: 3 grader, 3372/3372 phép chấm khớp; xem [báo cáo bonus](BonusInspectAI.md). Điểm +5 do giảng viên xác nhận. Expert đã qua public suite và các chẩn đoán bổ sung; bộ chấm ẩn và điểm cuối do giảng viên xác nhận.
+
+## Bản slide để đọc
+
+[Slide HTML giải thích Lab09](2A202603547-PhanTrongHau-Lab09-Slides.html) đi từ bối cảnh đến M0–M7 và bonus, có sơ đồ, ví dụ tương tác và từ điển keyword. File tự chứa, mở offline bằng trình duyệt.

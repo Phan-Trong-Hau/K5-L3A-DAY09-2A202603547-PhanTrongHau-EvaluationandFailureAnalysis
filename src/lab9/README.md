@@ -36,3 +36,7 @@ Kết quả ghi trong báo cáo lấy từ lần chạy đã lưu: v2 chặn 3/3
 ## Bonus Inspect AI
 
 [BonusInspectAI.md](report/BonusInspectAI.md): port 3 grader, khớp 3372/3372 phép chấm. Từ `src/`, cài `python -m pip install -r requirements.txt -r requirements-lab9-bonus.txt`, chạy `python -m lab9.bonus`. Inspect là dependency tùy chọn, core CI giữ nguyên.
+
+## Slide HTML để học và đọc
+
+[2A202603547-PhanTrongHau-Lab09-Slides.html](report/2A202603547-PhanTrongHau-Lab09-Slides.html): 43 slide offline, sơ đồ minh họa, từ điển 141 thuật ngữ, ví dụ pass@k/pass^k tương tác, chế độ đọc và In/PDF. Mở trực tiếp bằng trình duyệt.
