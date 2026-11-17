@@ -30,7 +30,7 @@ Gợi ý chia vai:
 | Đào Huy Hoàng | Shape A — workflow (`src/lab8/shapes/workflow.py`) | `26c4fde`, `eab8322` | `src/tests/test_workflow_extra.py`: `test_workflow_quotes_from_order_row_not_ticket`, `test_workflow_trace_has_no_ticket_or_secret` |
 | Ngô Đức Thịnh | Shape B — single (`src/lab8/shapes/single.py`) | `a517bc7`, `ab6624c` | `src/tests/test_single_shape.py` (5 test: ticket delay seed 55, trace secret/PII, per-order cap T13/T14, crash propagation, unknown claim); `src/tests/test_single_extra.py` (3 test); 62 test student `single` |
 | Lê Hồng Quân | Shape C — orchestrator (`src/lab8/shapes/orchestrator.py`); ablation R1 | `fbe22ed`, `01e9ecf` | `src/tests/test_orchestrator_shape.py` (7 test); `src/tests/test_bonus_orchestrator_parallel.py` (song song, timing); `src/tests/test_orchestrator_extra.py` |
-| Phan Trọng Hậu | D baseline + bonus B3, đánh giá | `87b2508` | `src/tests/test_bonus_swarm_verified.py` (22 passed) |
+| Phan Trọng Hậu | D baseline + bonus B3, đánh giá | `87b2508` | `src/tests/test_bonus_swarm_verified.py`: `test_verifier_checks_every_business_fact_used_for_quote`, `test_adversarial_cases_follow_structured_order`, `test_workflow_baseline_matches_labels_on_adversarial_cases`, `test_verifier_fixes_reference_swarm_seed_55_public_t02`, `test_verifier_emits_override_trace_for_seed_55`, `test_verified_variant_resumes_after_effect_crash_once` (22 cases passed) |
 
 ## Cá nhân
 
