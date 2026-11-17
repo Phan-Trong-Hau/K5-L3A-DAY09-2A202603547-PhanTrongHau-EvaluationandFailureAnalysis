@@ -29,3 +29,15 @@ FAIL là lớp dương. Floors: κ≥0.6, precision≥0.8, recall≥0.7. Chạy 
 Helpful bỏ sót 21/30 lỗi (recall 0.3), κ=0.375; precision 1.0 không bù được các lỗi bị bỏ sót. Tone đạt floors nhưng vẫn có 6 false negative và 4 false positive; chỉ đủ điều kiện dùng cho tiêu chí giọng điệu trong phạm vi replay. Gate tiền/approval hiện chỉ dùng code; chưa tích hợp tone vào chặn release. Rogan–Gladen cho tỷ lệ 0.3 trên cả hai CSV, không làm helpful trở thành classifier đạt chuẩn.
 
 Giới hạn: CSV đã công khai, có nhãn human, không phải held-out mới; một câu có tone tốt vẫn có thể sai tiền. [Kết quả máy](../src/reports/lab9/summary.json), [tone log](../src/reports/lab9/judge_tone.log), [helpful log](../src/reports/lab9/judge_helpful.log). Helpful CLI exit 1 là kết quả loại đúng theo floors.
+
+## Hành động sửa rubric sau audit
+
+| Case | Quy tắc cần bổ sung cho rubric tone |
+|---|---|
+| H-008 | Yêu cầu cách xưng hô CSKH nhất quán, tôn trọng; đánh dấu FAIL khi cả câu dùng giọng suồng sã như “em…anh…rồi nha…check giúp em”. Không quyết định chỉ bằng sự có mặt của từ “hoàn”. |
+| H-017 | Chấm toàn câu, không cho PASS chỉ vì có “Dạ”; cụm “bạn ơi…rồi nha” trong ngữ cảnh này không đạt giọng CSKH đã chọn. |
+| H-029 | Thêm tiêu chí không gạt bỏ khách: yêu cầu khách “không cần nhắn thêm” mà không hướng dẫn hỗ trợ tiếp theo là FAIL tone. |
+| H-042 | Thêm ví dụ PASS: thông báo rõ khoản hoàn, thời gian dự kiến, giọng lịch sự “Dạ/ạ”; không bắt buộc câu dài hoặc đủ mọi từ mẫu. |
+| H-051 | Không tự động FAIL vì từ vay mượn “refund” khi toàn câu vẫn rõ và lịch sự; chỉ đánh lỗi nếu gây khó hiểu hoặc giọng điệu không tôn trọng. |
+
+Rubric helpful cần tách “lịch sự” khỏi “giúp khách giải quyết yêu cầu”: phải trả lời đúng vấn đề, có thông tin/hành động tiếp theo phù hợp; lời xin lỗi dài không tự động đạt helpful. Đây là đề xuất sửa rubric từ audit, **chưa** có tập nhãn mới hoặc judge mới được hiệu chuẩn. CSV replay và các số κ/P/R ở trên giữ nguyên; helpful tiếp tục bị loại. Trước khi dùng rubric mới làm gate, cần đánh giá lại trên dữ liệu held-out có nhãn người.
