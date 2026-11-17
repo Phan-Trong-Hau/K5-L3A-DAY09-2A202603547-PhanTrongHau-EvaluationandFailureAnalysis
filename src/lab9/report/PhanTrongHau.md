@@ -71,3 +71,7 @@ python -m pytest -q -m student -o addopts= -k lab9
 ## Giới hạn và trách nhiệm
 
 Phan Trọng Hậu phụ trách bài lab và xử lý gate đỏ; chưa có waiver/release được phê duyệt. Dữ liệu public nhỏ và MockLLM, không đo người dùng thật hoặc hidden. A/A cùng cấu trúc modulo không đại diện mọi nguồn nhiễu. Reply parser giới hạn VND dạng số, legacy không có reply event thì không áp dụng. FM09 mới quan sát phòng vệ thành công. Năm nhận xét tone được người thực hiện xác nhận trên dữ liệu có sẵn; chưa thay thế held-out mới. Code/grader và bằng chứng đã được commit/push tại `712959e`. Trường commit trong JSON ghi lại nền mã nguồn tại thời điểm chạy; dấu vân tay SHA-256 ở trên định danh nội dung code/config/test đã đánh giá. Báo cáo chính được đặt trong `src/lab9/report/`.
+
+## Bổ sung checklist nộp chính thức
+
+Sau khi đối chiếu 4 tài liệu trong lab9-starter, đã bổ sung section eval trong harness_map 1.2, report eval_fixed/eval_seeded_regression đúng tên, hành động sửa rubric tone, layer kiến trúc và giới hạn 5 seed. Xem [bảng rà soát](SubmissionAudit.md). Bằng chứng gate, mutation, A/A và trap được đưa vào PR starter/d09 → main; kết quả CI theo checks GitHub của PR.

@@ -35,3 +35,9 @@ Tone κ=0.757, P=0.857, R=0.8: đạt. Helpful κ=0.375, R=0.3: loại. [Audit 5
 Grader detection v1/v2 đều 100%, false alarm 0% trên fixed. [Bốn bẫy integrity](../src/reports/lab9/traps.log) đều bị chặn. Owner: Phan Trọng Hậu; phạm vi pilot và quy trình release ở [PRD](PRD_v1.1.md).
 
 Giới hạn: chỉ public/mock, không hidden/production; judge chưa có held-out mới; legacy swarm không có reply event nên score reply=1.0 là không áp dụng. Tăng version khi đổi dữ liệu/nhãn, giữ baseline cùng SHA trước khi gate. Không suy luận điểm chính thức từ public suite.
+
+## Giới hạn cỡ mẫu và nhiễu (M6)
+
+Với 5 seed, lỗi có xác suất xuất hiện 1/3 mỗi lần **không được phát hiện ổn định**. Nếu các lần độc lập, xác suất cả 5 lần đều bỏ lỡ lỗi là (2/3)^5 ≈ 13.2%; khả năng kết luận giảm có ý nghĩa còn phụ thuộc số item và tương quan giữa chúng. Đây là minh họa xác suất, không phải kết quả đo của MockLLM. Không hạ ngưỡng chỉ để bắt một variant; cần tăng số seed, thêm item đại diện và đo lại A/A trước khi đổi contract.
+
+A/A MockLLM Δ=0 vì chạy xác định và hai bộ seed có cấu trúc tương tự. LLM thật có biến thiên lấy mẫu và môi trường/tool nên dải nhiễu có thể >0; cần đo nhiều lần và chọn sàn ngoài dải nhiễu của agent không đổi. Floor pass_hat_5=0.85 hiện chỉ được biện minh trong phạm vi thử nghiệm công khai này.
