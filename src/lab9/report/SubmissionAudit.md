@@ -43,6 +43,6 @@ Bài triển khai đã được push lên main trước đợt rà soát; PR l�
 - Năm anchor so với key riêng của giảng viên: không có key công khai; không kết luận khớp 5/5.
 - Variant/trap/vector ẩn: public suite không chứng minh đạt đủ điểm Advanced/Expert hoặc tổng 100 điểm.
 - Không có CI run trên GitHub để xác nhận trạng thái xanh.
-- Bonus Inspect AI/DeepEval chưa thực hiện; không bắt buộc.
+- Bonus đã bổ sung sau rà soát: [port 3 grader sang Inspect AI](BonusInspectAI.md), khớp 3372/3372 phép chấm; điểm cộng do giảng viên xác nhận.
 
 Đợt bổ sung không sửa implementation Lab8, threshold, nhãn, variant hoặc trap. Hai report đúng tên sinh bằng CLI, không chỉnh JSON tay. Key anchor và bộ chấm ẩn vẫn thuộc phạm vi đánh giá của giảng viên.

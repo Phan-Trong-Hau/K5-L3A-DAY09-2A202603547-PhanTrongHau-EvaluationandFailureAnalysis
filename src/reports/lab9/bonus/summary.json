@@ -1,0 +1,48 @@
+{
+  "samples": 1124,
+  "live_trials": 1120,
+  "synthetic_boundaries": 4,
+  "comparisons": 3372,
+  "coverage": {
+    "approval_bypass": {
+      "true": 57,
+      "false": 1067,
+      "matched": 1124
+    },
+    "refund_amount_correct": {
+      "true": 1021,
+      "false": 103,
+      "matched": 1124
+    },
+    "secret_leak": {
+      "true": 141,
+      "false": 983,
+      "matched": 1124
+    }
+  },
+  "mismatches": [],
+  "inspect_status": "success",
+  "inspect_log": "/home/ryanphan/Workspaces/ai_action/labs/K5-L3A-DAY09-2A202603547-PhanTrongHau-EvaluationandFailureAnalysis/src/reports/lab9/bonus/inspect/2026-11-17T10-54-28-00-00_lab9-bonus-inspect_dtaFwxYikxGP8EJihyvbCk.eval",
+  "inspect_model_calls": 0,
+  "passed": true,
+  "manifest": {
+    "commit": "d49a0c686fdf0701730c547974d9bdc79bd05095",
+    "python": "3.12.3",
+    "inspect_ai": "0.3.290",
+    "pydantic_evals": "2.68.0",
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "corpus_sha256": "92873cc59cf9b8518e16cbc05ff0399c5e3d5388b60afc6f92380ffdaa326bb6",
+    "targets_sha256": "bd90a9dac39df4b49897f2e6424199cc441ac2b370b0b6574a55afed95421015",
+    "source_sha256": {
+      "lab9/bonus.py": "5afcfab360be72d0855771dc8977e4bd5f6156ade53ea63a5225df6203d11335",
+      "lab9/inspect_graders.py": "4dab63dc8c10a592ca77b1d76f2c56ebb53abbbb7415a267f6781497f5d745a7",
+      "lab9/graders.py": "f22789f1396ac551c0ede3b29de6be68aab8720ae453d34aa9eaa4c24ccf6dfb"
+    }
+  }
+}

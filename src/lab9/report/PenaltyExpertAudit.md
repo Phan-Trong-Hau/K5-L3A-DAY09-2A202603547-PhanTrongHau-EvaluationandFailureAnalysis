@@ -14,7 +14,7 @@ Kết luận: **không phát hiện căn cứ áp dụng 5 khoản trừ điểm
 
 ## Bonus +5
 
-**Chưa thực hiện.** Chưa có port 3 grader sang Inspect AI/DeepEval hoặc bằng chứng so khớp kết quả giữa hai harness. pydantic-evals là harness bắt buộc của bài, không tính là bonus. Không tự cộng 5 điểm.
+**Đã bổ sung sau đợt rà soát:** port 3 grader sang Inspect AI và thực chạy hai harness trên 1124 snapshot, khớp 3372/3372 phép chấm. [Báo cáo bonus](BonusInspectAI.md) ghi code, corpus, native log, ca biên và kiểm thử phát hiện sai khác. Không tự cộng điểm; giảng viên xác nhận +5, tổng tối đa 100.
 
 ## Expert M7
 

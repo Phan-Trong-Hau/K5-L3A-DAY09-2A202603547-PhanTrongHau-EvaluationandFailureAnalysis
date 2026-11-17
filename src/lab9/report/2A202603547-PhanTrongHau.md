@@ -78,4 +78,4 @@ Sau khi đối chiếu 4 tài liệu trong lab9-starter, đã bổ sung section 
 
 ## Đối chiếu trừ điểm / Bonus / Expert
 
-[Biên bản kiểm tra](PenaltyExpertAudit.md): không phát hiện vi phạm 5 khoản trừ điểm; báo cáo runtime tái lập khớp. Bonus Inspect AI/DeepEval chưa thực hiện, chưa tính +5. Expert đã qua public suite và các chẩn đoán bổ sung; bộ chấm ẩn và điểm cuối do giảng viên xác nhận.
+[Biên bản kiểm tra](PenaltyExpertAudit.md): không phát hiện vi phạm 5 khoản trừ điểm; báo cáo runtime tái lập khớp. Bonus đã được bổ sung bằng Inspect AI: 3 grader, 3372/3372 phép chấm khớp; xem [báo cáo bonus](BonusInspectAI.md). Điểm +5 do giảng viên xác nhận. Expert đã qua public suite và các chẩn đoán bổ sung; bộ chấm ẩn và điểm cuối do giảng viên xác nhận.

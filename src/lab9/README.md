@@ -32,3 +32,7 @@ python -m pytest -q -m student -o addopts= -k lab9
 Kết quả ghi trong báo cáo lấy từ lần chạy đã lưu: v2 chặn 3/3 hồi quy, cho qua fixed/honest_refactor, chặn 4/4 public integrity trap. Giới hạn và phần audit người thực hiện xác nhận được ghi rõ trong báo cáo chính.
 
 Đối chiếu các khoản trừ điểm, trạng thái Bonus và Expert: [PenaltyExpertAudit.md](report/PenaltyExpertAudit.md).
+
+## Bonus Inspect AI
+
+[BonusInspectAI.md](report/BonusInspectAI.md): port 3 grader, khớp 3372/3372 phép chấm. Từ `src/`, cài `python -m pip install -r requirements.txt -r requirements-lab9-bonus.txt`, chạy `python -m lab9.bonus`. Inspect là dependency tùy chọn, core CI giữ nguyên.
