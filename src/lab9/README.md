@@ -2,7 +2,7 @@
 
 Phan Trọng Hậu · 2A202603547.
 
-Báo cáo chính: [report/PhanTrongHau.md](report/PhanTrongHau.md).
+Báo cáo chính: [report/2A202603547-PhanTrongHau.md](report/2A202603547-PhanTrongHau.md).
 
 | Yêu cầu | File triển khai / bằng chứng |
 | --- | --- |
@@ -30,3 +30,5 @@ python -m pytest -q -m student -o addopts= -k lab9
 ```
 
 Kết quả ghi trong báo cáo lấy từ lần chạy đã lưu: v2 chặn 3/3 hồi quy, cho qua fixed/honest_refactor, chặn 4/4 public integrity trap. Giới hạn và phần audit người thực hiện xác nhận được ghi rõ trong báo cáo chính.
+
+Đối chiếu các khoản trừ điểm, trạng thái Bonus và Expert: [PenaltyExpertAudit.md](report/PenaltyExpertAudit.md).
