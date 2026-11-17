@@ -12,14 +12,14 @@ Xây dựng đánh giá có thể tái lập để phân biệt sửa lỗi, đ�
 
 | Mốc | Kết quả | Bằng chứng |
 |---|---|---|
-| M0 | Taxonomy 9 FM, có trace/đối chứng; FM09 ghi rõ tấn công bị chặn | [Taxonomy](../../docs/failure_taxonomy.md) |
-| M1 | v1 14 item, v2 28 item; nhãn tách, provenance và coverage hợp lệ | [v1](../../src/data/eval/eval_set_v1.jsonl), [v2](../../src/data/eval/eval_set_v2.jsonl) |
-| M2 | Confusion, P/R, κ, Rogan–Gladen; 5 audit được người thực hiện xác nhận | [Judge audit](../../docs/judge_audit.md) |
-| M3 | Approval/ledger graders, FM08 reply-ledger, proposal diagnostic; detection 100%, FA 0% | [Grader](../../src/lab9/graders.py), [summary](../../src/reports/lab9/summary.json) |
-| M4 | Paired percentile bootstrap theo item, fixed qua và seeded bị chặn | [Gate v1](../../src/reports/lab9/gate_seeded_regression_v1.log) |
-| M5 | Map adversarial và 3 slice; fixed/honest qua, slice mutant bị chặn | [Spec v2](../../src/config/metric_spec_v2.yaml) |
-| M6 | pass@k, pass^k; A/A và floor pass_hat_5=0.85 | [A/A](../../src/reports/lab9/aa_v2.json) |
-| M7 | Integrity grid/NaN/grader/ratchet/slice, chặn 4 public trap | [Trap log](../../src/reports/lab9/traps.log) |
+| M0 | Taxonomy 9 FM, có trace/đối chứng; FM09 ghi rõ tấn công bị chặn | [Taxonomy](../../../docs/failure_taxonomy.md) |
+| M1 | v1 14 item, v2 28 item; nhãn tách, provenance và coverage hợp lệ | [v1](../../data/eval/eval_set_v1.jsonl), [v2](../../data/eval/eval_set_v2.jsonl) |
+| M2 | Confusion, P/R, κ, Rogan–Gladen; 5 audit được người thực hiện xác nhận | [Judge audit](../../../docs/judge_audit.md) |
+| M3 | Approval/ledger graders, FM08 reply-ledger, proposal diagnostic; detection 100%, FA 0% | [Grader](../../lab9/graders.py), [summary](../../reports/lab9/summary.json) |
+| M4 | Paired percentile bootstrap theo item, fixed qua và seeded bị chặn | [Gate v1](../../reports/lab9/gate_seeded_regression_v1.log) |
+| M5 | Map adversarial và 3 slice; fixed/honest qua, slice mutant bị chặn | [Spec v2](../../config/metric_spec_v2.yaml) |
+| M6 | pass@k, pass^k; A/A và floor pass_hat_5=0.85 | [A/A](../../reports/lab9/aa_v2.json) |
+| M7 | Integrity grid/NaN/grader/ratchet/slice, chặn 4 public trap | [Trap log](../../reports/lab9/traps.log) |
 
 ## Kết quả đo
 
@@ -46,14 +46,14 @@ A/A pass^5=0.8929 trên cả hai bộ seed; floor=0.85 có margin 0.0429. Slice 
 
 ## Phân tích và quyết định
 
-C-002@11: DB trễ 2 ngày, event 3 đổi thành 5 theo ticket, sinh khoản hoàn 20000 thay vì 0. Regression test chạy cả mutant và fixed. C-008@11: mutant misreport có ledger đúng 20000 và Lab8 pass, nhưng reply nói 35000; metric FM08 mới phát hiện được. Tiền/approval chấm code, tone chỉ đủ điều kiện theo calibration, helpful bị loại vì recall 0.3 và κ 0.375. [Chi tiết trace](../../docs/trace_case.md).
+C-002@11: DB trễ 2 ngày, event 3 đổi thành 5 theo ticket, sinh khoản hoàn 20000 thay vì 0. Regression test chạy cả mutant và fixed. C-008@11: mutant misreport có ledger đúng 20000 và Lab8 pass, nhưng reply nói 35000; metric FM08 mới phát hiện được. Tiền/approval chấm code, tone chỉ đủ điều kiện theo calibration, helpful bị loại vì recall 0.3 và κ 0.375. [Chi tiết trace](../../../docs/trace_case.md).
 
 ## Tài liệu bàn giao
 
-- [PRD v1.1](../../docs/PRD_v1.1.md): ngưỡng, trách nhiệm, release gate, rủi ro và phiên bản.
-- [Eval card](../../docs/eval_card.md): baseline/variant, CI, A/A và giới hạn.
-- [Evidence JSON](../../src/reports/lab9/summary.json): dữ liệu máy sinh; [log tái lập](../../src/reports/lab9/reproduce.log).
-- [Kết quả kiểm tra](../../src/reports/lab9/tests.log), [smoke](../../src/reports/lab9/smoke.log).
+- [PRD v1.1](../../../docs/PRD_v1.1.md): ngưỡng, trách nhiệm, release gate, rủi ro và phiên bản.
+- [Eval card](../../../docs/eval_card.md): baseline/variant, CI, A/A và giới hạn.
+- [Evidence JSON](../../reports/lab9/summary.json): dữ liệu máy sinh; [log tái lập](../../reports/lab9/reproduce.log).
+- [Kết quả kiểm tra](../../reports/lab9/tests.log), [smoke](../../reports/lab9/smoke.log).
 
 ## Tái lập
 
@@ -70,4 +70,4 @@ python -m pytest -q -m student -o addopts= -k lab9
 
 ## Giới hạn và trách nhiệm
 
-Phan Trọng Hậu phụ trách bài lab và xử lý gate đỏ; chưa có waiver/release được phê duyệt. Dữ liệu public nhỏ và MockLLM, không đo người dùng thật hoặc hidden. A/A cùng cấu trúc modulo không đại diện mọi nguồn nhiễu. Reply parser giới hạn VND dạng số, legacy không có reply event thì không áp dụng. FM09 mới quan sát phòng vệ thành công. Năm nhận xét tone được người thực hiện xác nhận trên dữ liệu có sẵn; chưa thay thế held-out mới. Kết quả code/grader thuộc working tree Lab09 dựa trên commit `2c12d11d0b9ebb7c150526a21c5c4989451a1af0`, chưa commit/push lên GitHub.
+Phan Trọng Hậu phụ trách bài lab và xử lý gate đỏ; chưa có waiver/release được phê duyệt. Dữ liệu public nhỏ và MockLLM, không đo người dùng thật hoặc hidden. A/A cùng cấu trúc modulo không đại diện mọi nguồn nhiễu. Reply parser giới hạn VND dạng số, legacy không có reply event thì không áp dụng. FM09 mới quan sát phòng vệ thành công. Năm nhận xét tone được người thực hiện xác nhận trên dữ liệu có sẵn; chưa thay thế held-out mới. Code/grader và bằng chứng đã được commit/push tại `712959e`. Trường commit trong JSON ghi lại nền mã nguồn tại thời điểm chạy; dấu vân tay SHA-256 ở trên định danh nội dung code/config/test đã đánh giá. Báo cáo chính được đặt trong `src/lab9/report/`.

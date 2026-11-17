@@ -149,7 +149,7 @@ Gặp lỗi khi cài hoặc chạy: xem [docs/troubleshooting.md](../docs/troubl
 
 ## Lab09 — Evaluation and Failure Analysis
 
-Báo cáo và kết quả Lab09: [báo cáo Phan Trọng Hậu](../report/lab09/PhanTrongHau.md), [eval card](../docs/eval_card.md), [PRD v1.1](../docs/PRD_v1.1.md). Các lệnh sau chạy từ `src/` với venv đã activate:
+Báo cáo và kết quả Lab09: [báo cáo Phan Trọng Hậu](lab9/report/PhanTrongHau.md), [eval card](../docs/eval_card.md), [PRD v1.1](../docs/PRD_v1.1.md). Các lệnh sau chạy từ `src/` với venv đã activate:
 
 ```bash
 python -m pip install -r requirements.txt -r requirements-lab9.txt

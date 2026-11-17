@@ -5,7 +5,7 @@ Phan Trọng Hậu · MSSV 2A202603547 · GitHub Phan-Trong-Hau · ngày 17/11/2
 - Baseline v1: `E-swarm-20261117-266d`, SHA `266dd9056622`, 14 item × 5 seed.
 - Baseline v2: `E-swarm-20261117-6b17`, SHA `6b17ce678794`, 28 item × 5 seed (14 public + 14 adversarial).
 - Spec: 1.0/v1 và 2.0/v2. Seed chính: 11,22,33,44,55; A/A: 66,77,88,99,110. MockLLM, Python 3.12.3.
-- Code/grader: dựa trên commit `2c12d11d0b9ebb7c150526a21c5c4989451a1af0` cùng thay đổi working tree của bài Lab09; chưa commit kết quả này. [Dữ liệu tổng hợp](../src/reports/lab9/summary.json), [lệnh tái lập](../src/lab9/report.py).
+- Code/grader: đã commit/push trong `712959e`. JSON lưu commit nền tại thời điểm chạy và hash nội dung code/config/test để đối chiếu. [Dữ liệu tổng hợp](../src/reports/lab9/summary.json), [lệnh tái lập](../src/lab9/report.py).
 
 ## Baseline và PR mô phỏng
 

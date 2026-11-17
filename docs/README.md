@@ -14,4 +14,4 @@ Các file quy định chính nằm ở root repo: [README.md](../README.md), [RU
 
 ## Lab09
 
-[Báo cáo Lab09](../report/lab09/PhanTrongHau.md) · [Taxonomy](failure_taxonomy.md) · [Judge audit](judge_audit.md) · [Trace case](trace_case.md) · [PRD v1.1](PRD_v1.1.md) · [Eval card](eval_card.md).
+[Báo cáo Lab09](../src/lab9/report/PhanTrongHau.md) · [Taxonomy](failure_taxonomy.md) · [Judge audit](judge_audit.md) · [Trace case](trace_case.md) · [PRD v1.1](PRD_v1.1.md) · [Eval card](eval_card.md).
