@@ -11,3 +11,7 @@ Các file quy định chính nằm ở root repo: [README.md](../README.md), [RU
 | [bonus_topics.md](bonus_topics.md) | Bảy topic điểm cộng B1–B7, thang điểm, khung `bonus_report.md` | Chỉ khi làm bonus |
 | [troubleshooting.md](troubleshooting.md) | Lỗi cài đặt, lỗi Windows, lỗi trace, lỗi benchmark | Khi gặp lỗi |
 | [instructor.md](instructor.md) | Pack hidden, cách phát `student_drop/`, chấm chính thức, CI | Chỉ giảng viên |
+
+## Lab09
+
+[Báo cáo Lab09](../report/lab09/PhanTrongHau.md) · [Taxonomy](failure_taxonomy.md) · [Judge audit](judge_audit.md) · [Trace case](trace_case.md) · [PRD v1.1](PRD_v1.1.md) · [Eval card](eval_card.md).

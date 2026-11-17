@@ -38,6 +38,22 @@ def sha12(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
 
 
+def public_failure_modes(claim: dict[str, Any]) -> list[str]:
+    # Coverage tags describe the input's risk, not whether a particular agent failed.
+    modes = {"FM-01"}
+    expected = claim["expected"]
+    if expected.get("refund_vnd", 0) > 0:
+        modes.update(("FM-04", "FM-08"))
+        if claim.get("order_id") in ("O-107", "O-515"):
+            modes.add("FM-07")
+    if expected.get("policy_denied") or not expected.get("approval_ok"):
+        modes.add("FM-02")
+    matrix = claim.get("matrix_id")
+    modes.update({"T02": ["FM-03"], "T05": ["FM-09"], "T06": ["FM-06"],
+                  "T09": ["FM-03"], "T13": ["FM-05"], "T14": ["FM-05"]}.get(matrix, []))
+    return sorted(modes)
+
+
 def build(source: Path = SOURCE) -> tuple[int, int]:
     claims = load_jsonl(source)
     items, labels = [], {}
@@ -46,8 +62,7 @@ def build(source: Path = SOURCE) -> tuple[int, int]:
         items.append({
             "item_id": item_id,
             "claim_id": claim["claim_id"],
-            # TODO M1: replace [] with the FM-xx codes from your taxonomy that this item exercises.
-            "failure_modes": [],
+            "failure_modes": public_failure_modes(claim),
             "provenance": {"source": "lab8_public", "matrix_id": claim.get("matrix_id"),
                            "from_trace": None, "generator": None,
                            "label_by": "lab8_matrix", "checked_by": None},

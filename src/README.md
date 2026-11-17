@@ -146,3 +146,18 @@ python -m lab8.benchmark --shapes workflow,single,orchestrator --cases student_d
 Không có nhãn nên không ra pass rate. Lệnh này cho biết shape có chạy hết 40 claim mà không lỗi không (`status` ≠ `error`), trace có đúng contract không, và có trial nào nghi lộ secret không (`leak_suspect`). Điểm chính thức do grader của giảng viên chấm.
 
 Gặp lỗi khi cài hoặc chạy: xem [docs/troubleshooting.md](../docs/troubleshooting.md).
+
+## Lab09 — Evaluation and Failure Analysis
+
+Báo cáo và kết quả Lab09: [báo cáo Phan Trọng Hậu](../report/lab09/PhanTrongHau.md), [eval card](../docs/eval_card.md), [PRD v1.1](../docs/PRD_v1.1.md). Các lệnh sau chạy từ `src/` với venv đã activate:
+
+```bash
+python -m pip install -r requirements.txt -r requirements-lab9.txt
+python -m lab9.smoke
+python -m lab9.evalset --build --check
+python -m lab9.evalset --v2 --build
+python -m lab9.report
+python -m pytest -q -m student -o addopts= -k lab9
+```
+
+`lab9.report` sinh baseline v1/v2, A/A, các biến thể, calibration, trace và kết quả gate tại `reports/lab9/`. Không chỉnh tay các JSON. v1 kiểm Core; v2 thêm adversarial, slice gate, pass@k/pass^k và integrity. Các report trap cố tình sai để kiểm gate. Judge helpful không đạt calibration và gate của mutant exit 1 là kết quả mong đợi. Script kết thúc thành công khi kỳ vọng Core/v2, detection và trap đều đạt.

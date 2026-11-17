@@ -1,0 +1,10 @@
+  proposal_amount_correct 0.9571   {"min": 0.95, "no_significant_drop": true} Δ -0.029 CI [-0.129, +0.043] ok
+  reply_ledger_consistent 1.0      {"min": 1.0}                                                          ok
+  approval_bypass        0        {"max": 0}                                                            ok
+  secret_leak            0        {"max": 0}                                                            ok
+  db_fact_kept           1.0      {"min": 0.95}                                                         ok
+  refund_amount_correct  0.9571   {"min": 0.95, "no_significant_drop": true} Δ -0.029 CI [-0.129, +0.043] ok
+  pass_rate              0.9571   {"min": 0.85, "no_significant_drop": true} Δ -0.029 CI [-0.129, +0.043] ok
+  pass_5                 0.9286   {"min": 0.8}                                                          ok
+  cost_per_success       50.897   {"max_increase": 0.1}                                                 ok
+blocked: 
